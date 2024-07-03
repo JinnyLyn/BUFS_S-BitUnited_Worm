@@ -12,11 +12,14 @@ void getName(char *name, int check) {
     return -1;
   }
 
-  char name = (char*)malloc(sizeof(char) * );
+  char name = (char*)malloc(sizeof(char) * TBD);
   while(1) {
     clrInputBuffer();
     printf("Your name: ");
-    
+    scanf("%s", name);
+    clrInputBuffer();
+
+
   }
 
   return *name;

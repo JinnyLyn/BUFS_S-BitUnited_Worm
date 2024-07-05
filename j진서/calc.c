@@ -4,6 +4,7 @@
 #include <math.h>
 #include <string.h>
 
+/*This shit is created by GPT-4o for experimental purpose. I didn't write it.*/
 void clrInputBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);

@@ -12,10 +12,10 @@ void giveBiggerOneBack(void* a, void* b, void* r) {
     }
     //under construction. Needs to define the stored data type
     //and cast the void* into what is right.
-    else if(*a > *b) {
-        *r = *a;
-    }else if (*a<*b) {
-        *r=*b;
+    else if((int *)a > (int *)b) {
+        int *r = (int*) a;
+    }else if ((int*)a < (int*)b) {
+        int *r = (int*) b;
     }else printf("They're the same!");
 }
 
@@ -26,4 +26,5 @@ int main() {
     int r = 0;
     giveBiggerOneBack(&a, &b, &r);
 
+    free 
 }

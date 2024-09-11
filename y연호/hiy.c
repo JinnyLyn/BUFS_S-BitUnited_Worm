@@ -26,5 +26,6 @@ int main() {
     int r = 0;
     giveBiggerOneBack(&a, &b, &r);
 
-    free 
+    free(a);
+    free(b);
 }

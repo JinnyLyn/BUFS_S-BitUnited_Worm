@@ -1,4 +1,10 @@
 S-BIT UNITED / WORM
-코딩 예제 풀이 공유 및 피드백용
+코딩 예제 풀이 공유 및 피드백
+프로젝트 진행
 
-문의: 010-5070-8829 / noh8829@outlook.com
+[프로젝트 폴더](/projects/)
+
+깃허브 기초 관련 글
+[깃허브 사용법, 명령어 등](https://devyihyun.tistory.com/30)
+[VSC로 깃허브 사용하기](https://ossam5.tistory.com/169)
+[깃허브 프로젝트 사용하기](https://musma.github.io/2023/08/03/github-projects.html#github-projects-%EB%B7%B0-%EC%B6%94%EA%B0%80)

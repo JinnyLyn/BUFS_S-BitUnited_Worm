@@ -1,15 +1,19 @@
 #include <stdio.h>
 
 int main() {
-    short data1[9] = {4,6,9,8,7,2,5,1,3};
+    int data[7] = {6,3,9,7,2,4,1};
+    for (int j = 0; j < 6; j++) {
+        for (int i = 0; i < 6; i++) {
+            int tmp = 0;
+            if (data[i] > data[i+1]) {
+                tmp = data[i];
+                data[i] = data[i+1];
+            data[i+1] = tmp;
+        } else {
 
-    short tmp = data1[0];
-    for (int i = 0; i < 9; i++) {
-        if (data1[i] > tmp) {
-            tmp = data1[i];
         }
     }
-    printf("The biggest number is %d\n", tmp);
+    printf("%d, %d, %d, %d, %d, %d, %d\n", data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
 
     return 0;
 }

@@ -3,13 +3,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//! return codes:
-//! 0: success
-//! -1: error reading input
-//! -2: error allocating memory
-//! to be added later.
+/**
+ * *return codes:
+ * *-1: error reading input
+ * *-2: memory allocation failure
+ */
 
-//인풋값 유효여부 확인(아직 안쓰임). 문제있으면 -1 돌려줌.
+
+//Initial message
+void InitialMessage() {
+  printf("_________ .__       .__                                           __               __            __________              ____.__        \n");
+  printf("\\_   ___ \\|__|_____ |  |__   ___________  _____________  ____    |__| ____   _____/  |_          \\______   \\___.__.     |    |__| ____  \n");
+  printf("/    \\  \\/|  \\____ \\|  |  \\_/ __ \\_  __ \\ \\____ \\_  __ \\/  _ \\   |  |/ __ \\_/ ___\\   __\\          |    |  _<   |  |     |    |  |/    \\ \n");
+  printf("\\     \\___|  |  |_> >   Y  \\  ___/|  | \\/ |  |_> >  | \\(  <_> )  |  \\  ___/\\  \\___|  |            |    |   \\\\___  | /\\__|    |  |   |  \\\n");
+  printf(" \\______  /__|   __/|___|  /\\___  >__|    |   __/|__|   \\____/\\__|  |\\___  >\\___  >__|    ______  |______  // ____| \\________|__|___|  /\n");
+  printf("        \\/   |__|        \\/     \\/        |__|               \\______|    \\/     \\/       /_____/         \\/ \\/                       \\/ \n");
+  printf("\n\n");
+}
+
+
+//*인풋값 유효여부 확인(아직 안쓰임). 문제있으면 -1 돌려줌.
 int validateInput(int min, int max) {
   char input[10];
   int value;
@@ -33,14 +46,16 @@ int validateInput(int min, int max) {
 }
 
 
-//인풋버퍼 초기화
+//*인풋버퍼 초기화
 void clrInputBuffer() {
   int c;
   while ((c = getchar()) != '\n' && c != EOF);
 }
 
-//encrypt function. 암호화 기능 함수. 숫자로 입력받은  방법으로 switch문에서 각각 암호화 코드 작성
-//함수는 암호화된 값을 돌려줘야함.
+/**
+ * Encrypttion function. 암호화 기능 함수.
+ * @param method Parameter for this function will determine the encryption method.
+ */
 int encrypting(int method) {
   switch (method) {
     case 1:
@@ -48,8 +63,10 @@ int encrypting(int method) {
   }
 }
 
-//decrypt function. 복호화 기능 함수. 숫자로 입력받은 방법으로 switch문에서 각각 코드 작성.
-//함수는 복호화된 값을 돌려줘야함.
+/**
+ * Decryption function. 복호화 기능 함수.
+ * @param method Parameter for this function will determine the decryption method.
+ */
 int decrypting(int method) {
   switch (method) {
     case 1:
@@ -57,7 +74,7 @@ int decrypting(int method) {
   }
 }
 
-//main. 메인
+//*main. 메인
 int main(void) {
   int decrypt_or_encrypt = 0;
   int decrypt_method = 0;
@@ -67,15 +84,9 @@ int main(void) {
     printf("Memory allocation failed!\nExiting...\n");
     return -2;
   }
+  //print out initial message
+  InitialMessage();
 
-//Initial message
-  printf("_________ .__       .__                                           __               __            __________              ____.__        \n");
-  printf("\\_   ___ \\|__|_____ |  |__   ___________  _____________  ____    |__| ____   _____/  |_          \\______   \\___.__.     |    |__| ____  \n");
-  printf("/    \\  \\/|  \\____ \\|  |  \\_/ __ \\_  __ \\ \\____ \\_  __ \\/  _ \\   |  |/ __ \\_/ ___\\   __\\          |    |  _<   |  |     |    |  |/    \\ \n");
-  printf("\\     \\___|  |  |_> >   Y  \\  ___/|  | \\/ |  |_> >  | \\(  <_> )  |  \\  ___/\\  \\___|  |            |    |   \\\\___  | /\\__|    |  |   |  \\\n");
-  printf(" \\______  /__|   __/|___|  /\\___  >__|    |   __/|__|   \\____/\\__|  |\\___  >\\___  >__|    ______  |______  // ____| \\________|__|___|  /\n");
-  printf("        \\/   |__|        \\/     \\/        |__|               \\______|    \\/     \\/       /_____/         \\/ \\/                       \\/ \n");
-  printf("\n\n");
 
   printf("This is a basic decrypt/encrypt program.\n");
   printf("What has been encrypted using this program is only decrypt-able with this one. (Ideally...)\n");

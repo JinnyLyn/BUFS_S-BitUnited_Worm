@@ -3,9 +3,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//! return codes:
+//! 0: success
+//! -1: error reading input
+//! -2: error allocating memory
+//! to be added later.
+
 //인풋값 유효여부 확인(아직 안쓰임). 문제있으면 -1 돌려줌.
 int validateInput(int min, int max) {
-  char input[7];
+  char input[10];
   int value;
 
   printf("Please type your selection (%d - %d)\n", min, max);
@@ -38,11 +44,11 @@ void clrInputBuffer() {
 int encrypting(int method) {
   switch (method) {
     case 1:
-    //여따해
+
   }
 }
 
-//decryt function. 복호화 기능 함수. 숫자로 입력받은 방법으로 switch문에서 각각 코드 작성.
+//decrypt function. 복호화 기능 함수. 숫자로 입력받은 방법으로 switch문에서 각각 코드 작성.
 //함수는 복호화된 값을 돌려줘야함.
 int decrypting(int method) {
   switch (method) {
@@ -56,6 +62,30 @@ int main(void) {
   int decrypt_or_encrypt = 0;
   int decrypt_method = 0;
   int encrypt_method = 0;
+  char *object_string = NULL;
+  if (object_string = (char *)malloc(sizeof(char) * 100) != NULL) {
+    printf("Memory allocation failed!\nExiting...\n");
+    return -2;
+  }
+
+//Initial message
+  printf("_________ .__       .__                                           __               __            __________              ____.__        \n");
+  printf("\\_   ___ \\|__|_____ |  |__   ___________  _____________  ____    |__| ____   _____/  |_          \\______   \\___.__.     |    |__| ____  \n");
+  printf("/    \\  \\/|  \\____ \\|  |  \\_/ __ \\_  __ \\ \\____ \\_  __ \\/  _ \\   |  |/ __ \\_/ ___\\   __\\          |    |  _<   |  |     |    |  |/    \\ \n");
+  printf("\\     \\___|  |  |_> >   Y  \\  ___/|  | \\/ |  |_> >  | \\(  <_> )  |  \\  ___/\\  \\___|  |            |    |   \\\\___  | /\\__|    |  |   |  \\\n");
+  printf(" \\______  /__|   __/|___|  /\\___  >__|    |   __/|__|   \\____/\\__|  |\\___  >\\___  >__|    ______  |______  // ____| \\________|__|___|  /\n");
+  printf("        \\/   |__|        \\/     \\/        |__|               \\______|    \\/     \\/       /_____/         \\/ \\/                       \\/ \n");
+  printf("\n\n");
+
+  printf("This is a basic decrypt/encrypt program.\n");
+  printf("What has been encrypted using this program is only decrypt-able with this one. (Ideally...)\n");
+  printf("Please enter what you want to encrypt: \n");
+  if (fgets(object_string, sizeof(object_string), stdin)!= NULL) {
+    object_string[strcspn(object_string, "\n")] = '\0';
+  } else {
+    printf("Error reading input.\nExiting...\n");
+    return -1;
+  }
 
   printf("Please Select what You want to do: \n");
   printf("[1] Encrypt\n[2]Decrypt\n");
@@ -87,5 +117,8 @@ int main(void) {
         }
       break;
     }
+  } else {
+    printf("Invalid input. Exiting...\n");
+    return -1;
   }
 }

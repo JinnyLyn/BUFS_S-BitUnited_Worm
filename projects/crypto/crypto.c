@@ -53,7 +53,7 @@ void clrInputBuffer() {
 }
 
 /**
- * Encrypttion function. 암호화 기능 함수.
+ * Encryption function. 암호화 기능 함수.
  * @param method Parameter for this function will determine the encryption method.
  */
 int encrypting(int method) {
@@ -79,8 +79,8 @@ int main(void) {
   int decrypt_or_encrypt = 0;
   int decrypt_method = 0;
   int encrypt_method = 0;
-  char *object_string = NULL;
-  if (object_string = (char *)malloc(sizeof(char) * 100) != NULL) {
+  char * object_string = (char *)malloc(sizeof(char) * 100);
+  if (object_string == NULL) {
     printf("Memory allocation failed!\nExiting...\n");
     return -2;
   }
@@ -99,7 +99,7 @@ int main(void) {
   }
 
   printf("Please Select what You want to do: \n");
-  printf("[1] Encrypt\n[2]Decrypt\n");
+  printf("[1]Encrypt\n[2]Decrypt\n");
   
   decrypt_or_encrypt = validateInput(1, 2);
   if(decrypt_or_encrypt != -1) {

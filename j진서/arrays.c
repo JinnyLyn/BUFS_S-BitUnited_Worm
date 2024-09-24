@@ -1,19 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    int data[7] = {6,3,9,7,2,4,1};
-    for (int j = 0; j < 6; j++) {
-        for (int i = 0; i < 6; i++) {
-            int tmp = 0;
-            if (data[i] > data[i+1]) {
-                tmp = data[i];
-                data[i] = data[i+1];
-            data[i+1] = tmp;
-        } else {
+    char data[12] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    data[5] = 1;
+    data[11] = 2;
+    printf("1 Dimensional array: data[%d] = %d, data[%d] = %d\n", 5, data[5], 11, data[11]);
 
-        }
-    }
-    printf("%d, %d, %d, %d, %d, %d, %d\n", data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
-
+    char data2[3][4] = {{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}};
+    data2[1][2] = 1;
+    data2[2][3] = 2;
+    printf("2 Dimensional array: data[1][2] = %d, data[2][3] = %d\n", data2[1][2], data2[2][3]);
     return 0;
 }

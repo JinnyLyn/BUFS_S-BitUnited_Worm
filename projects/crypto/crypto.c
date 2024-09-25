@@ -3,9 +3,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//인풋값 유효여부 확인(아직 안쓰임). 문제있으면 -1 돌려줌.
+/**
+ * *return codes:
+ * *-1: error reading input
+ * *-2: memory allocation failure
+ */
+
+
+//Initial message
+void InitialMessage() {
+  printf("_________ .__       .__                                           __               __            __________              ____.__        \n");
+  printf("\\_   ___ \\|__|_____ |  |__   ___________  _____________  ____    |__| ____   _____/  |_          \\______   \\___.__.     |    |__| ____  \n");
+  printf("/    \\  \\/|  \\____ \\|  |  \\_/ __ \\_  __ \\ \\____ \\_  __ \\/  _ \\   |  |/ __ \\_/ ___\\   __\\          |    |  _<   |  |     |    |  |/    \\ \n");
+  printf("\\     \\___|  |  |_> >   Y  \\  ___/|  | \\/ |  |_> >  | \\(  <_> )  |  \\  ___/\\  \\___|  |            |    |   \\\\___  | /\\__|    |  |   |  \\\n");
+  printf(" \\______  /__|   __/|___|  /\\___  >__|    |   __/|__|   \\____/\\__|  |\\___  >\\___  >__|    ______  |______  // ____| \\________|__|___|  /\n");
+  printf("        \\/   |__|        \\/     \\/        |__|               \\______|    \\/     \\/       /_____/         \\/ \\/                       \\/ \n");
+  printf("\n\n");
+}
+
+
+//*인풋값 유효여부 확인(아직 안쓰임). 문제있으면 -1 돌려줌.
 int validateInput(int min, int max) {
-  char input[7];
+  char input[10];
   int value;
 
   printf("Please type your selection (%d - %d)\n", min, max);
@@ -27,23 +46,27 @@ int validateInput(int min, int max) {
 }
 
 
-//인풋버퍼 초기화
+//*인풋버퍼 초기화
 void clrInputBuffer() {
   int c;
   while ((c = getchar()) != '\n' && c != EOF);
 }
 
-//encrypt function. 암호화 기능 함수. 숫자로 입력받은  방법으로 switch문에서 각각 암호화 코드 작성
-//함수는 암호화된 값을 돌려줘야함.
+/**
+ * Encryption function. 암호화 기능 함수.
+ * @param method Parameter for this function will determine the encryption method.
+ */
 int encrypting(int method) {
   switch (method) {
     case 1:
-    //여따해
+
   }
 }
 
-//decryt function. 복호화 기능 함수. 숫자로 입력받은 방법으로 switch문에서 각각 코드 작성.
-//함수는 복호화된 값을 돌려줘야함.
+/**
+ * Decryption function. 복호화 기능 함수.
+ * @param method Parameter for this function will determine the decryption method.
+ */
 int decrypting(int method) {
   switch (method) {
     case 1:
@@ -51,14 +74,32 @@ int decrypting(int method) {
   }
 }
 
-//main. 메인
+//*main. 메인
 int main(void) {
   int decrypt_or_encrypt = 0;
   int decrypt_method = 0;
   int encrypt_method = 0;
+  char * object_string = (char *)malloc(sizeof(char) * 100);
+  if (object_string == NULL) {
+    printf("Memory allocation failed!\nExiting...\n");
+    return -2;
+  }
+  //print out initial message
+  InitialMessage();
+
+
+  printf("This is a basic decrypt/encrypt program.\n");
+  printf("What has been encrypted using this program is only decrypt-able with this one. (Ideally...)\n");
+  printf("Please enter what you want to encrypt: \n");
+  if (fgets(object_string, sizeof(object_string), stdin)!= NULL) {
+    object_string[strcspn(object_string, "\n")] = '\0';
+  } else {
+    printf("Error reading input.\nExiting...\n");
+    return -1;
+  }
 
   printf("Please Select what You want to do: \n");
-  printf("[1] Encrypt\n[2]Decrypt\n");
+  printf("[1]Encrypt\n[2]Decrypt\n");
   
   decrypt_or_encrypt = validateInput(1, 2);
   if(decrypt_or_encrypt != -1) {
@@ -87,4 +128,8 @@ int main(void) {
         }
       break;
     }
+  } else {
+    printf("Invalid input. Exiting...\n");
+    return -1;
+  }
 }

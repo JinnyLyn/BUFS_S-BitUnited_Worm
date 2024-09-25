@@ -19,5 +19,5 @@ if test != password : #같지 않으면 다시
     print("비밀번호가 같지 않습니다.")
     quit()
     
-
+if 
 

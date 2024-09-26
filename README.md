@@ -12,3 +12,5 @@ S-BIT UNITED / WORM
 [VSC로 깃허브 사용하기](https://ossam5.tistory.com/169)
 
 [깃허브 프로젝트 사용하기](https://musma.github.io/2023/08/03/github-projects.html#github-projects-%EB%B7%B0-%EC%B6%94%EA%B0%80)
+
+[보는거 추천](https://youtu.be/Xi_OdRBg1mU?si=1D2ZJOlVsk2YBcZo)

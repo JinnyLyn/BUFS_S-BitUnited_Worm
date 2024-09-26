@@ -24,9 +24,9 @@ void InitialMessage() {
 
 /* Frees allocated memory for variables.
  * Needs to be added each time a new memory is allocaed by malloc.*/
-void free_Malloc_variables() {
-  free(object_string);
-  free(result_data);
+void free_Malloc_variables(char * a, char *b) {
+  free(a);
+  free(b);
 }
 
 //*인풋값 유효여부 확인(아직 안쓰임). 문제있으면 -1 돌려줌.
@@ -91,7 +91,7 @@ int main(void) {
   if (object_string == NULL || result_data == NULL) {
     printf("Memory allocation failed!\nExiting...\n");
     
-    free_Malloc_variables();
+    free_Malloc_variables(object_string, result_data);
     return -2;
   }
   //print out initial message
@@ -106,7 +106,7 @@ int main(void) {
     object_string[strcspn(object_string, "\n")] = '\0';
   } else {
     printf("Error reading input.\nExiting...\n");
-    free_Malloc_variables();
+    free_Malloc_variables(object_string, result_data);
     return -1;
   }
 
@@ -142,12 +142,12 @@ int main(void) {
     }
   } else {
     printf("Invalid input. Exiting...\n");
-    free_Malloc_variables();
+    free_Malloc_variables(object_string, result_data);
     return -1;
   }
 
   printf("Here is the Result!\n");
   printf("[%f]\n");
-  free_Malloc_variables();
+  free_Malloc_variables(object_string, result_data);
   return 0;
 }

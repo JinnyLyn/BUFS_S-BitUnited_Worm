@@ -5,5 +5,8 @@
 > 해당 방식마다 함수 만들어서 메인함수는 간단케 해서 가독성 높이기
 > 사용자 인풋 받을때마다 버퍼 정리
 > 버퍼 오버플로우 방지책으로 입력 받을때마다 지정형식에 맞지 않을 시 에러 출력 후 프로그램 종료시키기
+-------------------------------------------------------------------------------------------------------------
+> Create my own method of encoding/decoding. It must be reversable, complicated enough that no one could come up with
+an idea of how it is encrypted in a first glance.
 
 > 향후 기능 떠오르면 더 추가.

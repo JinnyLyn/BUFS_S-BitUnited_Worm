@@ -2,6 +2,8 @@ S-BIT UNITED / WORM
 
 코딩 예제 풀이 공유 및 피드백
 
+조장: 노진서 010-5070-8829 / @lynceus:matrix.org
+
 프로젝트 진행[폴더](/projects/)
 
 

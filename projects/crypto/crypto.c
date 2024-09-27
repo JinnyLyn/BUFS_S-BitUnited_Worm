@@ -66,7 +66,10 @@ void clrInputBuffer() {
 int encrypting(int method, char* toEncrypt, char* result) {
   switch (method) {
     case 1:
-   //TODO: start here!! First Create Your OWN Encryption Method that can be done other way!!
+    /*TODO:start implementing encryption function here.
+    Must return result or an error code. 
+    use bitwise operator.
+    maybe use salt n pepper if needed.*/
   }
 }
 
@@ -74,7 +77,7 @@ int encrypting(int method, char* toEncrypt, char* result) {
  * Decryption function. 복호화 기능 함수.
  * @param method Parameter for this function will determine the decryption method.
  */
-int decrypting(int method) {
+int decrypting(int method, char* toEncrypt, char* result) {
   switch (method) {
     case 1:
     //여따해
@@ -86,7 +89,7 @@ int main(void) {
   int decrypt_or_encrypt = 0;
   int decrypt_method = 0;
   int encrypt_method = 0;
-  char * object_string = (char *)malloc(sizeof(char) * 100);
+  char * object_string = (char *)malloc(sizeof(char) * );
   char * result_data = (char *)malloc(sizeof(char) * 512);
   if (object_string == NULL || result_data == NULL) {
     printf("Memory allocation failed!\nExiting...\n");

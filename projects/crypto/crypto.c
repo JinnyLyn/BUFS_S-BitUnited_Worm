@@ -8,6 +8,7 @@
  * * 0: successfully finished task
  * *-1: error reading input
  * *-2: memory allocation failure
+ * *-3: encryption failure
  */
 
 
@@ -89,7 +90,7 @@ int main(void) {
   int decrypt_or_encrypt = 0;
   int decrypt_method = 0;
   int encrypt_method = 0;
-  char * object_string = (char *)malloc(sizeof(char) * );
+  char * object_string = (char *)malloc(sizeof(char) * 512);
   char * result_data = (char *)malloc(sizeof(char) * 512);
   if (object_string == NULL || result_data == NULL) {
     printf("Memory allocation failed!\nExiting...\n");
@@ -127,7 +128,7 @@ int main(void) {
         printf("[1]CIPHER\n[2]asdf\n[3]asdf\n[4]asdf\n[5]asdf\n");
         encrypt_method = validateInput(1, 5); //함수 입력값은 선택지에 따라 바뀜
         if(encrypt_method != -1) {
-          encrypting(1, object_string, result_data);
+          encrypting(encrypt_method, object_string, result_data);
           //계속해
         }
       break;
@@ -138,7 +139,7 @@ int main(void) {
         printf("[1]DCIPHER\n[2]asdf\n[3]asdf\n[4]asdf\n[5]asdf\n");
         decrypt_method = validateInput(1, 5); //함수 입력값은 선택지에 따라 바뀜
         if(decrypt_method != -1) {
-          decrypting(decrypt_method);
+          decrypting(decrypt_method, object_string, result_data);
           //계속해
         }
       break;

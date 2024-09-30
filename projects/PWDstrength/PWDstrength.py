@@ -1,6 +1,7 @@
 #만든 비밀번호가 안전한지에 따라서 등급을 메기는 시스템
 
 import re
+//regex 사용해서 name 대조 추천
 
 def  chk (a, b, c, d) :
   return a in d or b in d or c in d

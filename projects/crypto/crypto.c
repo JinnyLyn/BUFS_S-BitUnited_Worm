@@ -24,7 +24,7 @@ void InitialMessage() {
 }
 
 /* Frees allocated memory for variables.
- * Needs to be added each time a new memory is allocaed by malloc.*/
+ * Needs to be added each time a new memory is allocated by malloc.*/
 void free_Malloc_variables(char * a, char *b) {
   free(a);
   free(b);
@@ -68,7 +68,7 @@ int encrypting(int method, char* toEncrypt, char* result) {
   switch (method) {
     case 1:
     /*TODO:start implementing encryption function here.
-    Must return result or an error code. 
+    Must return an exit code. 
     use bitwise operator.
     maybe use salt n pepper if needed.*/
   }

@@ -124,7 +124,7 @@ int main(void) {
     switch (decrypt_or_encrypt) {
       case 1: //암호화
         printf("Select encrypting method(#1 will be based on my own algorithm.): \n");
-        //암호화 방법 몇가지(baseu64 url 등등) 사용해보기.
+        //암호화 방법 몇가지(base64 url 등등) 사용해보기.
         printf("[1]CIPHER\n[2]asdf\n[3]asdf\n[4]asdf\n[5]asdf\n");
         encrypt_method = validateInput(1, 5); //함수 입력값은 선택지에 따라 바뀜
         if(encrypt_method != -1) {

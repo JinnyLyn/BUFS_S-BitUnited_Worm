@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+char mykey[14] = "aSexHagoSipDa";
 
 /**
  * *return codes:
@@ -60,6 +61,27 @@ void clrInputBuffer() {
   while ((c = getchar()) != '\n' && c != EOF);
 }
 
+//*char to binary
+void char2binary(char c, char* binary) {
+  for (int i = 7; i >= 0; --i) {
+    binary[7 - i] = (c & (1 << i)) ? '1' : '0';
+  }
+  binary[8] = '\0';
+}
+
+//*string into binary
+void string2binary(const char *s, char *binary) {
+  int len = strlen(s);
+  char binary_char[9];
+  for (int i = 0; i < len; ++i) {
+    char2binary(s[i], binary_char);
+    strcat(binary, binary_char);
+    if (i < len - 1) {
+      strcat(binary, " ");
+    }
+  } 
+}
+
 /**
  * Encryption function. 암호화 기능 함수.
  * @param method Parameter for this function will determine the encryption method.
@@ -67,10 +89,7 @@ void clrInputBuffer() {
 int encrypting(int method, char* toEncrypt, char* result) {
   switch (method) {
     case 1:
-    /*TODO:start implementing encryption function here.
-    Must return an exit code. 
-    use bitwise operator.
-    maybe use salt n pepper if needed.*/
+    
   }
 }
 

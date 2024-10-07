@@ -111,6 +111,8 @@ int main(void) {
   int encrypt_method = 0;
   char * object_string = (char *)malloc(sizeof(char) * 512);
   char * result_data = (char *)malloc(sizeof(char) * 512);
+  char * bin_result;
+
   if (object_string == NULL || result_data == NULL) {
     printf("Memory allocation failed!\nExiting...\n");
     
@@ -131,6 +133,16 @@ int main(void) {
     printf("Error reading input.\nExiting...\n");
     free_Malloc_variables(object_string, result_data);
     return -1;
+  }
+
+  //calculating memories needed and allocating them for binary converting function.
+    
+  int input_len = strlen(object_string);
+  int bin_len = input_len * 9;
+  bin_result = (char*)malloc(sizeof(char) * bin_len);
+  if (bin_result == NULL) {
+    fprintf(stderr, "Memory allocation failure!!!\n");
+    return -2;
   }
 
   printf("Please Select what You want to do: \n");

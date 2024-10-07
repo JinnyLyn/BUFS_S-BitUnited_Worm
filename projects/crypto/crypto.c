@@ -11,7 +11,10 @@ char mykey[14] = "aSexHagoSipDa";
  * *-2: memory allocation failure
  * *-3: encryption failure
  */
-
+//these are for fprintf err messages.
+char err1[39] = "Error Reading Input!!!\nExiting ...\n";
+char err2[54] = "Memory allocation Failure!!!\nExiting ...\n";
+char err3[37] = "Encryption Failure!!!\nExiting ...\n";
 
 //Initial message
 void InitialMessage() {
@@ -142,6 +145,8 @@ int main(void) {
   bin_result = (char*)malloc(sizeof(char) * bin_len);
   if (bin_result == NULL) {
     fprintf(stderr, "Memory allocation failure!!!\n");
+	free(bin_result);
+	free_Malloc_variables(object_string, result_data);
     return -2;
   }
 

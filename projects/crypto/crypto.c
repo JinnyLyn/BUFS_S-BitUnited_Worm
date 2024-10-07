@@ -28,10 +28,13 @@ void InitialMessage() {
 }
 
 /* Frees allocated memory for variables.
- * Needs to be added each time a new memory is allocated by malloc.*/
-void free_Malloc_variables(char * a, char *b) {
-  free(a);
-  free(b);
+ * Need to add extra line whenever allocating memory in main.
+ * allocated[allocated_count++] = <variable name>
+ */
+void freeMalloc() {
+  for (int i = 0; i < allocated_count; i++) {
+    free(allocated[i]);
+  }
 }
 
 //*인풋값 유효여부 확인(아직 안쓰임). 문제있으면 -1 돌려줌.
@@ -47,12 +50,12 @@ int validateInput(int min, int max) {
     value = strtol(input, &endptr, 10);
 
     if(*endptr != '\0' || endptr == input || value < min || value > max) {
-      printf("Error!!! Invalid input.\nPlease enter a number between %d and %d!\nExiting ...\n", min, max);
+      fprintf(stderr, "Error!!! Invalid input.\nPlease enter a number between %d and %d!\nExiting ...\n", min, max);
       return -1;
     }
     return value;
   }else {
-    printf("Error reading input.\nExiting ...\n");
+    fprintf(stderr, "%s\n", err1);
     return -1;
   }
 }
@@ -92,7 +95,7 @@ void string2binary(const char *s, char *binary) {
 int encrypting(int method, char* toEncrypt, char* result) {
   switch (method) {
     case 1:
-    
+      
   }
 }
 
@@ -109,17 +112,22 @@ int decrypting(int method, char* toEncrypt, char* result) {
 
 //*main. 메인
 int main(void) {
+  #define MAX_ALLOC_VAR 10
+  void * allocated[MAX_ALLOC_VAR];
+  int allocated_count = 0;
   int decrypt_or_encrypt = 0;
   int decrypt_method = 0;
   int encrypt_method = 0;
   char * object_string = (char *)malloc(sizeof(char) * 512);
+  allocated[allocated_count++] = object_string;
   char * result_data = (char *)malloc(sizeof(char) * 512);
+  allocated[allocated_count++] = result_data;
   char * bin_result;
 
   if (object_string == NULL || result_data == NULL) {
-    printf("Memory allocation failed!\nExiting...\n");
+    fprintf(stderr, "%s", err2);
     
-    free_Malloc_variables(object_string, result_data);
+    freeMalloc();
     return -2;
   }
   //print out initial message
@@ -134,7 +142,7 @@ int main(void) {
     object_string[strcspn(object_string, "\n")] = '\0';
   } else {
     printf("Error reading input.\nExiting...\n");
-    free_Malloc_variables(object_string, result_data);
+    freeMalloc();
     return -1;
   }
 
@@ -143,10 +151,11 @@ int main(void) {
   int input_len = strlen(object_string);
   int bin_len = input_len * 9;
   bin_result = (char*)malloc(sizeof(char) * bin_len);
+  allocated[allocated_count++] = bin_result;
   if (bin_result == NULL) {
-    fprintf(stderr, "Memory allocation failure!!!\n");
+    fprintf(stderr, "%s\n", err2);
 	free(bin_result);
-	free_Malloc_variables(object_string, result_data);
+	freeMalloc();
     return -2;
   }
 
@@ -182,12 +191,12 @@ int main(void) {
     }
   } else {
     printf("Invalid input. Exiting...\n");
-    free_Malloc_variables(object_string, result_data);
+    freeMalloc();
     return -1;
   }
 
   printf("Here is the Result!\n");
   printf("[%f]\n");
-  free_Malloc_variables(object_string, result_data);
+  freeMalloc();
   return 0;
 }

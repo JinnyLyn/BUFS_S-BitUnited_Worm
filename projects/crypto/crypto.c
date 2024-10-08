@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 char mykey[14] = "aSexHagoSipDa";
+#define MAX_ALLOC_VAR 10
+void * allocated[MAX_ALLOC_VAR];
+int allocated_count = 0;
 
 /**
  * *return codes:
@@ -95,7 +98,9 @@ void string2binary(const char *s, char *binary) {
 int encrypting(int method, char* toEncrypt, char* result) {
   switch (method) {
     case 1:
-      
+      string2binary(toEncrypt, result);
+      printf("Encrypted:\n%s\n", result);
+      break;
   }
 }
 
@@ -112,9 +117,6 @@ int decrypting(int method, char* toEncrypt, char* result) {
 
 //*main. 메인
 int main(void) {
-  #define MAX_ALLOC_VAR 10
-  void * allocated[MAX_ALLOC_VAR];
-  int allocated_count = 0;
   int decrypt_or_encrypt = 0;
   int decrypt_method = 0;
   int encrypt_method = 0;
@@ -195,8 +197,6 @@ int main(void) {
     return -1;
   }
 
-  printf("Here is the Result!\n");
-  printf("[%f]\n");
   freeMalloc();
   return 0;
 }

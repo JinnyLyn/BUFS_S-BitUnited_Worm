@@ -7,14 +7,13 @@ char mykey[14] = "aSexHagoSipDa";
 void * allocated[MAX_ALLOC_VAR];
 int allocated_count = 0;
 
-/**
+/*
  * *return codes:
  * * 0: successfully finished task
  * *-1: error reading input
  * *-2: memory allocation failure
  * *-3: encryption failure
  */
-//these are for fprintf err messages.
 char err1[39] = "Error Reading Input!!!\nExiting ...\n";
 char err2[54] = "Memory allocation Failure!!!\nExiting ...\n";
 char err3[37] = "Encryption Failure!!!\nExiting ...\n";
@@ -30,10 +29,7 @@ void InitialMessage() {
   printf("\n\n");
 }
 
-/* Frees allocated memory for variables.
- * Need to add extra line whenever allocating memory in main.
- * allocated[allocated_count++] = <variable name>
- */
+// Frees allocated memory for variables.
 void freeMalloc() {
   for (int i = 0; i < allocated_count; i++) {
     free(allocated[i]);

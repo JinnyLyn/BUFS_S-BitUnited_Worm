@@ -91,10 +91,11 @@ void string2binary(const char *s, char *binary) {
  * Encryption function. 암호화 기능 함수.
  * @param method Parameter for this function will determine the encryption method.
  */
-int encrypting(int method, char* toEncrypt, char* result) {
+int encrypting(int method, char* toEncrypt, char* result, char* keyAsBinary) {
   switch (method) {
     case 1:
       string2binary(toEncrypt, result);
+      string2binary(mykey, )//todo: finish implementing here.
       printf("Encrypted:\n%s\n", result);
       break;
   }
@@ -135,7 +136,7 @@ int main(void) {
   printf("This is a basic decrypt/encrypt program.\n");
   printf("What has been encrypted using this program is only decrypt-able with this one. (Ideally...)\n");
   printf("This program only works with English Alphabets on current version!");
-  printf("Please enter what you want to encrypt: \n");
+  printf("Enter what you want to decrypt/encrypt: \n");
   if (fgets(object_string, sizeof(object_string), stdin)!= NULL) {
     object_string[strcspn(object_string, "\n")] = '\0';
   } else {

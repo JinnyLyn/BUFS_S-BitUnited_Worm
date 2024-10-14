@@ -6,6 +6,5 @@
 > 사용자 인풋 받을때마다 버퍼 정리
 > 버퍼 오버플로우 방지책으로 입력 받을때마다 지정형식에 맞지 않을 시 에러 출력 후 프로그램 종료시키기
 > 입력받은 문자열을 모두 바이너리로 바꾼 후, 내가 정한 임의의 문자열과 비트연산자를 사용해서 인크립팅 방법 떠올려보기
-> ~~Need to allocate memory to prevent potential buffer overflows while converting string into binary.~~
 
 > 향후 기능 떠오르면 더 추가.

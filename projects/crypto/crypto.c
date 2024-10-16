@@ -176,7 +176,7 @@ int main(void) {
         printf("[1]CIPHER\n[2]asdf\n[3]asdf\n[4]asdf\n[5]asdf\n");
         encrypt_method = validateInput(1, 5); //함수 입력값은 선택지에 따라 바뀜
         if(encrypt_method != -1) {
-          encrypting(encrypt_method, object_string, result_data);
+          encrypting(encrypt_method, object_string);
           //계속해
         }
       break;
@@ -187,7 +187,7 @@ int main(void) {
         printf("[1]DCIPHER\n[2]asdf\n[3]asdf\n[4]asdf\n[5]asdf\n");
         decrypt_method = validateInput(1, 5); //함수 입력값은 선택지에 따라 바뀜
         if(decrypt_method != -1) {
-          decrypting(decrypt_method, object_string, result_data);
+          decrypting(decrypt_method, object_string);
           //계속해
         }
       break;

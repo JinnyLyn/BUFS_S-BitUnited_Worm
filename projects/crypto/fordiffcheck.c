@@ -1,3 +1,4 @@
+//for diff check
 #include <string.h>
 #include <stdbool.h>
 #include <stdio.h>

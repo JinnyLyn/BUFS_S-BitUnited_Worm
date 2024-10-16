@@ -6,7 +6,6 @@
 void * allocated[MAX_ALLOC_VAR];
 int allocated_count = 0;
 char mykey[14] = "aSexHagoSipDa";
-int intmykey = 0;
 
 /*
  * *return codes:
@@ -21,16 +20,15 @@ char err3[37] = "Encryption Failure!!!\nExiting ...\n";
 
 //Initial message
 void InitialMessage() {
-  printf("_________ .__       .__                                           __               __            __________              ____.__        \n");
-  printf("\\_   ___ \\|__|_____ |  |__   ___________  _____________  ____    |__| ____   _____/  |_          \\______   \\___.__.     |    |__| ____  \n");
-  printf("/    \\  \\/|  \\____ \\|  |  \\_/ __ \\_  __ \\ \\____ \\_  __ \\/  _ \\   |  |/ __ \\_/ ___\\   __\\          |    |  _<   |  |     |    |  |/    \\ \n");
-  printf("\\     \\___|  |  |_> >   Y  \\  ___/|  | \\/ |  |_> >  | \\(  <_> )  |  \\  ___/\\  \\___|  |            |    |   \\\\___  | /\\__|    |  |   |  \\\n");
-  printf(" \\______  /__|   __/|___|  /\\___  >__|    |   __/|__|   \\____/\\__|  |\\___  >\\___  >__|    ______  |______  // ____| \\________|__|___|  /\n");
-  printf("        \\/   |__|        \\/     \\/        |__|               \\______|    \\/     \\/       /_____/         \\/ \\/                       \\/ \n");
-  printf("\n\n");
+    printf("_________ .__       .__                                           __               __            __________              ____.__        \n");
+    printf("\\_   ___ \\|__|_____ |  |__   ___________  _____________  ____    |__| ____   _____/  |_          \\______   \\___.__.     |    |__| ____  \n");
+    printf("/    \\  \\/|  \\____ \\|  |  \\_/ __ \\_  __ \\ \\____ \\_  __ \\/  _ \\   |  |/ __ \\_/ ___\\   __\\          |    |  _<   |  |     |    |  |/    \\ \n");
+    printf("\\     \\___|  |  |_> >   Y  \\  ___/|  | \\/ |  |_> >  | \\(  <_> )  |  \\  ___/\\  \\___|  |            |    |   \\\\___  | /\\__|    |  |   |  \\\n");
+    printf(" \\______  /__|   __/|___|  /\\___  >__|    |   __/|__|   \\____/\\__|  |\\___  >\\___  >__|    ______  |______  // ____| \\________|__|___|  /\n");
+    printf("        \\/   |__|        \\/     \\/        |__|               \\______|    \\/     \\/       /_____/         \\/ \\/                       \\/ \n");
+    printf("\n\n");
 }
 
-// Frees allocated memory for variables.
 void freeMalloc() {
   for (int i = 0; i < allocated_count; i++) {
     free(allocated[i]);
@@ -60,13 +58,6 @@ int validateInput(int min, int max) {
   }
 }
 
-
-//*인풋버퍼 초기화
-void clrInputBuffer() {
-  int c;
-  while ((c = getchar()) != '\n' && c != EOF);
-}
-
 //*char to binary
 void char2binary(char c, char* binary) {
   for (int i = 7; i >= 0; --i) {
@@ -88,6 +79,12 @@ void string2binary(const char *s, char *binary) {
   }
 }
 
+//*인풋버퍼 초기화
+void clrInputBuffer() {
+  int c;
+  while ((c = getchar()) != '\n' && c != EOF);
+}
+
 /**
  * Encryption function. 암호화 기능 함수.
  * @param method Parameter for this function will determine the encryption method.
@@ -105,19 +102,6 @@ int encrypting(int method, char* toEncrypt, char* result) {
       break;
   }
 }
-
-/**
- * Decryption function. 복호화 기능 함수.
- * @param method Parameter for this function will determine the decryption method.
- */
-int decrypting(int method, char* toEncrypt, char* result) {
-  switch (method) {
-    case 1:
-    //여따해
-  }
-}
-
-//*main. 메인
 int main(void) {
   int decrypt_or_encrypt = 0;
   int decrypt_method = 0;
@@ -127,6 +111,8 @@ int main(void) {
   char * result_data = (char *)malloc(sizeof(char) * 512);
   allocated[allocated_count++] = result_data;
   char * bin_result;
+  int * object_string_long = 0;
+  int * mykey_long = 0;
 
   if (object_string == NULL || result_data == NULL) {
     fprintf(stderr, "%s", err2);
@@ -149,55 +135,4 @@ int main(void) {
     freeMalloc();
     return -1;
   }
-
-  //calculating memories needed and allocating them for binary converting function.
-  int input_len = strlen(object_string);
-  int bin_len = input_len * 9;
-  bin_result = (char*)malloc(sizeof(char) * bin_len);
-  allocated[allocated_count++] = bin_result;
-  if (bin_result == NULL) {
-    fprintf(stderr, "%s\n", err2);
-	free(bin_result);
-	freeMalloc();
-    return -2;
-  }
-
-  printf("Please Select what You want to do: \n");
-  printf("[1]Encrypt\n[2]Decrypt\n");
-  
-  decrypt_or_encrypt = validateInput(1, 2);
-  if(decrypt_or_encrypt != -1) {
-    clrInputBuffer();
-
-    switch (decrypt_or_encrypt) {
-      case 1: //암호화
-        printf("Select encrypting method(#1 will be based on my own algorithm.): \n");
-        //암호화 방법 몇가지(base64 url 등등) 사용해보기.
-        printf("[1]CIPHER\n[2]asdf\n[3]asdf\n[4]asdf\n[5]asdf\n");
-        encrypt_method = validateInput(1, 5); //함수 입력값은 선택지에 따라 바뀜
-        if(encrypt_method != -1) {
-          encrypting(encrypt_method, object_string, result_data);
-          //계속해
-        }
-      break;
-
-      case 2: //복호화
-        printf("Select decrypting method(use #1 if you used this program to encrypt.): \n");
-        //복호화 방법 몇가지 사용해보기.
-        printf("[1]DCIPHER\n[2]asdf\n[3]asdf\n[4]asdf\n[5]asdf\n");
-        decrypt_method = validateInput(1, 5); //함수 입력값은 선택지에 따라 바뀜
-        if(decrypt_method != -1) {
-          decrypting(decrypt_method, object_string, result_data);
-          //계속해
-        }
-      break;
-    }
-  } else {
-    printf("Invalid input. Exiting...\n");
-    freeMalloc();
-    return -1;
-  }
-
-  freeMalloc();
-  return 0;
 }

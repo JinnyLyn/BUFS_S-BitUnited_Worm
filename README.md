@@ -4,6 +4,7 @@
 
 조장: 노진서 010-5070-8829 / [@lynceus:matrix.org](https://matrix.to/#/@lynceus:matrix.org)
 
+조원: 장연호 010 9829 4442
 프로젝트 진행[폴더](/projects/)
 
 ___

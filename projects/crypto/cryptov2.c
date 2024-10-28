@@ -4,6 +4,8 @@
 #include <stdlib.h>
 
 #define MAX_ALLOC_VAR 10
+#define MAX_BUFFER_SIZE 4096
+#define MAX_BINARY_SIZE 
 
 void * allocated[MAX_ALLOC_VAR];
 int allocated_count = 0;
@@ -34,7 +36,7 @@ void InitialMessage() {
     printf("\\     \\___|  |  |_> >   Y  \\  ___/|  | \\/ |  |_> >  | \\(  <_> )  |  \\  ___/\\  \\___|  |            |    |   \\\\___  | /\\__|    |  |   |  \\\n");
     printf(" \\______  /__|   __/|___|  /\\___  >__|    |   __/|__|   \\____/\\__|  |\\___  >\\___  >__|    ______  |______  // ____| \\________|__|___|  /\n");
     printf("        \\/   |__|        \\/     \\/        |__|               \\______|    \\/     \\/       /_____/         \\/ \\/                       \\/ \n");
-    //todo: 노사장님 크레딧 추가 하기. printf("한남대 ")
+    //todo: 노사장님 크레딧 추가 하기. printf("한남대 donggeunlee\n");
     printf("\n\n");
 }
 
@@ -137,7 +139,7 @@ int main(void) {
   int decrypt_or_encrypt = 0;
   int decrypt_method = 0;
   int encrypt_method = 0;
-  char * object_string = (char *)malloc(sizeof(char) * 512);
+  char * object_string = (char *)malloc(sizeof(char) * MAX_BUFFER_SIZE);
   allocated[allocated_count++] = object_string;
   char * result_data = (char *)malloc(sizeof(char) * 512);
   allocated[allocated_count++] = result_data;

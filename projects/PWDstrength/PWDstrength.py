@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import re
+//regex 사용해서 name 대조 추천
 
 def chk(a, b, c, d):
     return a in d or b in d or c in d
@@ -83,5 +84,13 @@ elif 40 <= score < 60:
 elif 60 <= score < 80:
     print(f"비밀번호 강도: {score}점 (안전)")
 else:
+<<<<<<< HEAD
     print(f"비밀번호 강도: {score}점 (매우 안전)
           
+=======
+    print(f"비밀번호 강도: {score}점 (매우 안전)")
+
+#로마자 한글 변환 시스템
+#대소문자 구분 시스템
+#chk()기능 사용하여 만들기 복습 내지는 진도
+>>>>>>> d40fcee6a6ee0993072990ba826a12b1886ce21c

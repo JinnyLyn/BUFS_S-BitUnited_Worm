@@ -2,11 +2,20 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 #define MAX_ALLOC_VAR 10
+#define MAX_BUFFER_SIZE 4096
+#define MAX_BINARY_SIZE 
+
 void * allocated[MAX_ALLOC_VAR];
 int allocated_count = 0;
 char mykey[14] = "aSexHagoSipDa";
-int intmykey = 0;
+char* char_object_string = 0;
+char* char_mykey = 0;
+int * int_mykey = 0;
+int * int_object_string = 0;
+int * addmykeyobjectstring =0;
+int * xormykeyobjectstring = 0;
 
 /*
  * *return codes:
@@ -21,16 +30,16 @@ char err3[37] = "Encryption Failure!!!\nExiting ...\n";
 
 //Initial message
 void InitialMessage() {
-  printf("_________ .__       .__                                           __               __            __________              ____.__        \n");
-  printf("\\_   ___ \\|__|_____ |  |__   ___________  _____________  ____    |__| ____   _____/  |_          \\______   \\___.__.     |    |__| ____  \n");
-  printf("/    \\  \\/|  \\____ \\|  |  \\_/ __ \\_  __ \\ \\____ \\_  __ \\/  _ \\   |  |/ __ \\_/ ___\\   __\\          |    |  _<   |  |     |    |  |/    \\ \n");
-  printf("\\     \\___|  |  |_> >   Y  \\  ___/|  | \\/ |  |_> >  | \\(  <_> )  |  \\  ___/\\  \\___|  |            |    |   \\\\___  | /\\__|    |  |   |  \\\n");
-  printf(" \\______  /__|   __/|___|  /\\___  >__|    |   __/|__|   \\____/\\__|  |\\___  >\\___  >__|    ______  |______  // ____| \\________|__|___|  /\n");
-  printf("        \\/   |__|        \\/     \\/        |__|               \\______|    \\/     \\/       /_____/         \\/ \\/                       \\/ \n");
-  printf("\n\n");
+    printf("_________ .__       .__                                           __               __            __________              ____.__        \n");
+    printf("\\_   ___ \\|__|_____ |  |__   ___________  _____________  ____    |__| ____   _____/  |_          \\______   \\___.__.     |    |__| ____  \n");
+    printf("/    \\  \\/|  \\____ \\|  |  \\_/ __ \\_  __ \\ \\____ \\_  __ \\/  _ \\   |  |/ __ \\_/ ___\\   __\\          |    |  _<   |  |     |    |  |/    \\ \n");
+    printf("\\     \\___|  |  |_> >   Y  \\  ___/|  | \\/ |  |_> >  | \\(  <_> )  |  \\  ___/\\  \\___|  |            |    |   \\\\___  | /\\__|    |  |   |  \\\n");
+    printf(" \\______  /__|   __/|___|  /\\___  >__|    |   __/|__|   \\____/\\__|  |\\___  >\\___  >__|    ______  |______  // ____| \\________|__|___|  /\n");
+    printf("        \\/   |__|        \\/     \\/        |__|               \\______|    \\/     \\/       /_____/         \\/ \\/                       \\/ \n");
+    //todo: 노사장님 크레딧 추가 하기. printf("한남대 donggeunlee\n");
+    printf("\n\n");
 }
 
-// Frees allocated memory for variables.
 void freeMalloc() {
   for (int i = 0; i < allocated_count; i++) {
     free(allocated[i]);
@@ -60,15 +69,8 @@ int validateInput(int min, int max) {
   }
 }
 
-
-//*인풋버퍼 초기화
-void clrInputBuffer() {
-  int c;
-  while ((c = getchar()) != '\n' && c != EOF);
-}
-
 //*char to binary
-void char2binary(char c, char* binary) {
+void char2binary(char c, char * binary) {
   for (int i = 7; i >= 0; --i) {
     binary[7 - i] = (c & (1 << i)) ? '1' : '0';
   }
@@ -76,7 +78,7 @@ void char2binary(char c, char* binary) {
 }
 
 //*string into binary
-void string2binary(const char *s, char *binary) {
+void string2binary(const char *s, char* binary) {
   int len = strlen(s);
   char binary_char[9];
   for (int i = 0; i < len; ++i) {
@@ -88,20 +90,35 @@ void string2binary(const char *s, char *binary) {
   }
 }
 
+//*인풋버퍼 초기화
+void clrInputBuffer() {
+  int c;
+  while ((c = getchar()) != '\n' && c != EOF);
+}
+
 /**
  * Encryption function. 암호화 기능 함수.
  * @param method Parameter for this function will determine the encryption method.
  */
-int encrypting(int method, char* toEncrypt, char* result) {
+int encrypting(int method, char* object_string) {
   switch (method) {
     case 1:
       //인풋값과 내 키를 바이너리로 전환
-      string2binary(toEncrypt, result);
-      string2binary(mykey, intmykey);
+      string2binary(object_string, char_object_string);
+      string2binary(mykey, char_mykey);
       //전환된 바이너리를 strtol함수로 정수형으로 저장장
+      *int_mykey = strtol(char_mykey, &char_mykey, 10);
+      *int_object_string = strtol(char_object_string, &char_object_string, 10);
+      //add mykey to object_string
+      addmykeyobjectstring = (int *)malloc(sizeof(int));
+      allocated[allocated_count++] = addmykeyobjectstring;
+      *addmykeyobjectstring = *int_object_string + *int_mykey;
+      //xor mykey with object_string
+      xormykeyobjectstring = (int *)malloc(sizeof(int));
+      allocated[allocated_count++] = xormykeyobjectstring;
+      *xormykeyobjectstring = *int_object_string ^ *int_mykey;
 
-
-      printf("Encrypted:\n%s\n", result);
+     // printf("%d\n", *xormykeyobjectstring);
       break;
   }
 }
@@ -110,19 +127,19 @@ int encrypting(int method, char* toEncrypt, char* result) {
  * Decryption function. 복호화 기능 함수.
  * @param method Parameter for this function will determine the decryption method.
  */
-int decrypting(int method, char* toEncrypt, char* result) {
+/*int decrypting(int method, char* toEncrypt, char* result) {
   switch (method) {
     case 1:
     //여따해
   }
-}
+}*/
 
-//*main. 메인
+//main
 int main(void) {
   int decrypt_or_encrypt = 0;
   int decrypt_method = 0;
   int encrypt_method = 0;
-  char * object_string = (char *)malloc(sizeof(char) * 512);
+  char * object_string = (char *)malloc(sizeof(char) * MAX_BUFFER_SIZE);
   allocated[allocated_count++] = object_string;
   char * result_data = (char *)malloc(sizeof(char) * 512);
   allocated[allocated_count++] = result_data;
@@ -130,13 +147,14 @@ int main(void) {
 
   if (object_string == NULL || result_data == NULL) {
     fprintf(stderr, "%s", err2);
-    
+  
     freeMalloc();
     return -2;
   }
   //print out initial message
   InitialMessage();
 
+  
 
   printf("This is a basic decrypt/encrypt program.\n");
   printf("What has been encrypted using this program is only decrypt-able with this one. (Ideally...)\n");
@@ -150,8 +168,8 @@ int main(void) {
     return -1;
   }
 
-  //calculating memories needed and allocating them for binary converting function.
-  int input_len = strlen(object_string);
+    //calculating memories needed and allocating them for binary converting function.
+  /*int input_len = strlen(object_string);
   int bin_len = input_len * 9;
   bin_result = (char*)malloc(sizeof(char) * bin_len);
   allocated[allocated_count++] = bin_result;
@@ -160,7 +178,7 @@ int main(void) {
 	free(bin_result);
 	freeMalloc();
     return -2;
-  }
+  }*/
 
   printf("Please Select what You want to do: \n");
   printf("[1]Encrypt\n[2]Decrypt\n");
@@ -181,7 +199,7 @@ int main(void) {
         }
       break;
 
-      case 2: //복호화
+      /*case 2: //복호화
         printf("Select decrypting method(use #1 if you used this program to encrypt.): \n");
         //복호화 방법 몇가지 사용해보기.
         printf("[1]DCIPHER\n[2]asdf\n[3]asdf\n[4]asdf\n[5]asdf\n");
@@ -190,7 +208,7 @@ int main(void) {
           decrypting(decrypt_method, object_string);
           //계속해
         }
-      break;
+      break;*/
     }
   } else {
     printf("Invalid input. Exiting...\n");

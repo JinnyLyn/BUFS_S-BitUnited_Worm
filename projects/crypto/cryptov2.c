@@ -5,7 +5,7 @@
 
 #define MAX_ALLOC_VAR 10
 #define MAX_BUFFER_SIZE 4096
-#define MAX_BINARY_SIZE 
+#define MAX_BINARY_SIZE 32768
 
 void * allocated[MAX_ALLOC_VAR];
 int allocated_count = 0;
@@ -14,7 +14,7 @@ char* char_object_string = 0;
 char* char_mykey = 0;
 int * int_mykey = 0;
 int * int_object_string = 0;
-int * addmykeyobjectstring =0;
+int * addmykeyobjectstring = 0;
 int * xormykeyobjectstring = 0;
 
 /*
@@ -36,7 +36,7 @@ void InitialMessage() {
     printf("\\     \\___|  |  |_> >   Y  \\  ___/|  | \\/ |  |_> >  | \\(  <_> )  |  \\  ___/\\  \\___|  |            |    |   \\\\___  | /\\__|    |  |   |  \\\n");
     printf(" \\______  /__|   __/|___|  /\\___  >__|    |   __/|__|   \\____/\\__|  |\\___  >\\___  >__|    ______  |______  // ____| \\________|__|___|  /\n");
     printf("        \\/   |__|        \\/     \\/        |__|               \\______|    \\/     \\/       /_____/         \\/ \\/                       \\/ \n");
-    //todo: 노사장님 크레딧 추가 하기. printf("한남대 donggeunlee\n");
+    printf("special thanks to donggeunlee\n");
     printf("\n\n");
 }
 
@@ -47,7 +47,7 @@ void freeMalloc() {
 }
 
 //*인풋값 유효여부 확인(아직 안쓰임). 문제있으면 -1 돌려줌.
-int validateInput(int min, int max) {
+int validate_selection(int min, int max) {
   char input[sizeof(int)];
   int value;
 
@@ -106,14 +106,16 @@ int encrypting(int method, char* object_string) {
       //인풋값과 내 키를 바이너리로 전환
       string2binary(object_string, char_object_string);
       string2binary(mykey, char_mykey);
-      //전환된 바이너리를 strtol함수로 정수형으로 저장장
+      //전환된 바이너리를 strtol함수로 정수형으로 저장
       *int_mykey = strtol(char_mykey, &char_mykey, 10);
       *int_object_string = strtol(char_object_string, &char_object_string, 10);
       //add mykey to object_string
+      //todo: MUST ALLOCATE ENOUGH MEMORY
       addmykeyobjectstring = (int *)malloc(sizeof(int));
       allocated[allocated_count++] = addmykeyobjectstring;
       *addmykeyobjectstring = *int_object_string + *int_mykey;
       //xor mykey with object_string
+      //todo: MUST ALLOCATE ENOUGH MEMORY
       xormykeyobjectstring = (int *)malloc(sizeof(int));
       allocated[allocated_count++] = xormykeyobjectstring;
       *xormykeyobjectstring = *int_object_string ^ *int_mykey;
@@ -137,11 +139,11 @@ int encrypting(int method, char* object_string) {
 //main
 int main(void) {
   int decrypt_or_encrypt = 0;
-  int decrypt_method = 0;
-  int encrypt_method = 0;
+  int decrypt_method_selection = 0;
+  int encrypt_method_selection = 0;
   char * object_string = (char *)malloc(sizeof(char) * MAX_BUFFER_SIZE);
   allocated[allocated_count++] = object_string;
-  char * result_data = (char *)malloc(sizeof(char) * 512);
+  char * result_data = (char *)malloc(sizeof(char) * MAX_BINARY_SIZE);
   allocated[allocated_count++] = result_data;
   char * bin_result;
 
@@ -171,7 +173,7 @@ int main(void) {
     //calculating memories needed and allocating them for binary converting function.
   /*int input_len = strlen(object_string);
   int bin_len = input_len * 9;
-  bin_result = (char*)malloc(sizeof(char) * bin_len);
+  bin_result = (char*)malloc(sizeof(char) * bin_len);1
   allocated[allocated_count++] = bin_result;
   if (bin_result == NULL) {
     fprintf(stderr, "%s\n", err2);
@@ -183,7 +185,7 @@ int main(void) {
   printf("Please Select what You want to do: \n");
   printf("[1]Encrypt\n[2]Decrypt\n");
   
-  decrypt_or_encrypt = validateInput(1, 2);
+  decrypt_or_encrypt = validate_selection(1, 2);
   if(decrypt_or_encrypt != -1) {
     clrInputBuffer();
 
@@ -192,9 +194,9 @@ int main(void) {
         printf("Select encrypting method(#1 will be based on my own algorithm.): \n");
         //암호화 방법 몇가지(base64 url 등등) 사용해보기.
         printf("[1]CIPHER\n[2]asdf\n[3]asdf\n[4]asdf\n[5]asdf\n");
-        encrypt_method = validateInput(1, 5); //함수 입력값은 선택지에 따라 바뀜
-        if(encrypt_method != -1) {
-          encrypting(encrypt_method, object_string);
+        encrypt_method_selection = validate_selection(1, 5); //함수 입력값은 선택지에 따라 바뀜
+        if(encrypt_method_selection != -1) {
+          encrypting(encrypt_method_selection, object_string);
           //계속해
         }
       break;
@@ -203,9 +205,9 @@ int main(void) {
         printf("Select decrypting method(use #1 if you used this program to encrypt.): \n");
         //복호화 방법 몇가지 사용해보기.
         printf("[1]DCIPHER\n[2]asdf\n[3]asdf\n[4]asdf\n[5]asdf\n");
-        decrypt_method = validateInput(1, 5); //함수 입력값은 선택지에 따라 바뀜
-        if(decrypt_method != -1) {
-          decrypting(decrypt_method, object_string);
+        decrypt_method_selection = validate_selection(1, 5); //함수 입력값은 선택지에 따라 바뀜
+        if(decrypt_method_selection != -1) {
+          decrypting(decrypt_method_selection, object_string);
           //계속해
         }
       break;*/

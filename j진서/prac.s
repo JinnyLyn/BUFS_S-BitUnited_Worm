@@ -1,1 +1,0 @@
-lea rsi, [rbs+8*rcx]

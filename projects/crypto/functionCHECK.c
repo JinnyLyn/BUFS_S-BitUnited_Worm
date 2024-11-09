@@ -3,8 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MAX_BUFFER_SIZE 4096
+
 char mykey[14] = "aSexHagoSipDa";
+char mykey2[14] = "ahagosipdasex";
 char *char_mykey = NULL;
+char mykeyadd[30];
 
 // char을 이진수로 변환하는 함수 작성
 void char2binary(char c, char *binary_char) {
@@ -26,10 +30,17 @@ void string2binary(const char *s, char *binary) {
     }
 }
 
+void addarr(char *a, char *b, char *result) {
+  int len = strlen(a);
+  for (int i = 0; i < len; i++) {
+    result[i] = a[i] + b[i];
+  }
+}
+
 int main(void) {
-    char * object_string = (char*)malloc(1024);
+    char * object_string = (char*)malloc(sizeof(char) * MAX_BUFFER_SIZE);
     printf("type: ");
-    if (fgets(object_string, sizeof(object_string), stdin) == NULL) {
+    if (fgets(object_string, MAX_BUFFER_SIZE, stdin) == NULL) {
         printf("Error reading input!\nExiting...\n");
         return -1;
     }
@@ -42,10 +53,11 @@ int main(void) {
     }
 
     printf("%s\n", object_string);
-    int len = sizeof(char_object_string);
-    printf("%d\n", len);
     char_mykey[0] = '\0';  // 초기화를 위해 첫 글자에 NULL 값 설정
     char_object_string[0] = '\0';
+
+    addarr(mykey, mykey2, mykeyadd);
+    printf("%s\n", mykeyadd);
 
     // 이진 변환
     string2binary(mykey, char_mykey);

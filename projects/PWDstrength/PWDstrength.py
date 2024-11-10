@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import re
-//regex 사용해서 name 대조 추천
 
 def chk(a, b, c, d):
     return a in d or b in d or c in d
@@ -55,7 +54,7 @@ if uppercase >= 1:
     elif uppercase >= 2:
         score += 10
 else:
-    input("비밀번호에 최소 1개의 대문자가 필요합니다.") s
+    input("비밀번호에 최소 1개의 대문자가 필요합니다.")
     quit()
 
 # 숫자 포함 여부 평가
@@ -83,7 +82,7 @@ elif 40 <= score < 60:
     print(f"비밀번호 강도: {score}점 (평균)")
 elif 60 <= score < 80:
     print(f"비밀번호 강도: {score}점 (안전)")
-else:
+else: #밑에 얘네들 뭐냐?
 <<<<<<< HEAD
     print(f"비밀번호 강도: {score}점 (매우 안전)
           

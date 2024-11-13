@@ -1,0 +1,39 @@
+# Binary Exploitations
+
+
+## Reversing Tools
+radare / r2Pipe / iaito / pwndbg / *cutter / IDA
+## 자료구조
+https://learningnetwork.cisco.com/s/question/0D53i00000Kt7jJCAR/what-is-word-in-networking
+
+
+## 대충 어셈블리 이해에 도움되는거
+https://ir0nstone.gitbook.io/notes/binexp/stack/ret2win
+https://en.wikipedia.org/wiki/Function_prologue_and_epilogue
+https://books.google.es/books?id=zWrZY1OgTPsC&pg=PA489&lpg=PA489&dq=high+level+procedure+x86+leave&source=bl&ots=9C27YsLQUQ&sig=ACfU3U18htGf4XsjxzCSJaFVB3Q67ntPiA&hl=en&sa=X&ved=2ahUKEwjGwamB3uD2AhVFDuwKHTJOAUsQ6AF6BAglEAM#v=onepage&q=high%20level%20procedure%20x86%20leave&f=false
+https://ropemporium.com/guide.html#Common%20pitfalls
+
+
+## Shellcode
+https://ir0nstone.gitbook.io/notes/binexp/stack/shellcode
+### Shellcode DB
+https://shell-storm.org/shellcode/index.html
+https://www.exploit-db.com/shellcodes
+
+
+## Integer Overflow
+### Two's complement ;2의 보수
+https://www.youtube.com/watch?v=4qH4unVtJkE
+### int overflow
+https://www.youtube.com/watch?v=3qD3ybBwcFA
+https://www.youtube.com/watch?v=Dbbh_lrbgAU
+
+
+## Format string vuln
+https://cs155.stanford.edu/papers/formatstring-1.2.pdf
+https://www.exploit-db.com/docs/english/28476-linux-format-string-exploitation.pdf
+https://web.ecs.syr.edu/~wedu/Teaching/cis643/LectureNotes_New/Format_String.pdf
+https://axcheron.github.io/exploit-101-format-strings/
+https://www.skullsecurity.org/2015/defcon-quals-babyecho-format-string-vulns-in-gory-detail
+
+

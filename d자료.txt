@@ -35,5 +35,5 @@ https://www.exploit-db.com/docs/english/28476-linux-format-string-exploitation.p
 https://web.ecs.syr.edu/~wedu/Teaching/cis643/LectureNotes_New/Format_String.pdf
 https://axcheron.github.io/exploit-101-format-strings/
 https://www.skullsecurity.org/2015/defcon-quals-babyecho-format-string-vulns-in-gory-detail
-
+https://razvioverflow.github.io/247ctf/confused-environment-read.html
 

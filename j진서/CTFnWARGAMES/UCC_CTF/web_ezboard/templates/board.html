@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Board</title>
+</head>
+
+<body>
+    <div class="container my-3">
+        <h2>Welcome!</h2>
+        <table class="table">
+            <thead>
+            <tr class="table-dark">
+                <th>Subject</th>
+                <th>Author</th>
+                <th>Date</th>
+                <th>Secret</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for post in posts %}
+            <tr>
+                <td>
+                    <a href="{{ url_for('view', idx=loop.index) }}" style="text-decoration:none;color:black;">{{ post.subject }}</a>
+                </td>
+                <td>{{ post.author }}</td>
+                <td>{{ post.date }}</td>
+                <td>{{ post.secret }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <button type="button" class="btn btn-primary" onclick="window.location.href='/write';">Write</button>
+    </div>

@@ -1,0 +1,4 @@
+body { padding: 20px; }
+.post { margin-bottom: 20px; border: 1px solid #ccc; padding: 10px; border-radius: 5px; }
+.post-metadata { font-size: 0.9em; color: #666; }
+.post-content { margin-top: 10px; }

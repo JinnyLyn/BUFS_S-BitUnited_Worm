@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Login Page</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style1.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Platform!</h1>
+
+        <!-- Registration Form -->
+        <div class="form-section">
+            <h2>Register</h2>
+            <form action="/register" method="post">
+                <div class="mb-3">
+                    <label for="newUsername" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="newUsername" name="newUsername" required>
+                </div>
+                <div class="mb-3">
+                    <label for="newPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="newPassword" name="newPassword" required>
+                </div>
+                <button type="submit" class="btn btn-success">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+services:
+  db:
+    image: mariadb:11.3.2-jammy
+    environment:
+      - MARIADB_RANDOM_ROOT_PASSWORD=1
+    volumes:
+      - ./deploy/db:/docker-entrypoint-initdb.d:ro
+    networks:
+      - internal
+
+  app:
+    container_name: app
+    build:
+      context: ./deploy/app
+    depends_on:
+      - db
+    networks:
+      - internal
+    ports:
+      - "5000:5000"
+
+networks:
+  internal:

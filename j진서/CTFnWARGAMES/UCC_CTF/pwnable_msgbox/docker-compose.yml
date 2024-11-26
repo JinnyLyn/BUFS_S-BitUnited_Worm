@@ -1,0 +1,6 @@
+services:
+  msgbox:
+    build: .
+    restart: always 
+    ports:
+      - 2357:2357

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reported Posts</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style2.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Reported Posts</h1>
+        {% for report in reports %}
+        <div class="report">
+            <p><strong>Report ID:</strong> {{ report[0] }}</p>
+            <p><strong>Reported By:</strong> {{ report[1] | safe }}</p>
+            <p><strong>Post Content:</strong> {{ report[2] }}</p>
+            <p><strong>Reported At:</strong> {{ report[3] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

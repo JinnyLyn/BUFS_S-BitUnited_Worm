@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 20px; } 
+        .form-group { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <h2>Write</h2>
+    <form class="mt-5" action="/write" onsubmit="document.getElementById('date').value=Date.now();" method="POST">
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" class="form-control" id="subject" name="subject" required>
+        </div>
+
+        <div class="form-group">
+            <label for="contents">Author</label>
+            <input type="text" class="form-control" id="author" name="author" required>
+        </div>
+
+        <div class="form-group">
+            <label for="contents">Body</label>
+            <textarea class="form-control" id="body" name="body" rows="5" placeholder="Markdown supported: [link](http://dreamhack.io/), [mail](example@mail.com)" required></textarea>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="secret" name="secret">
+            <label class="form-check-label" for="secret">Secret?</label>
+        </div>
+
+        <input id="date" name="date" type="hidden">
+
+        <button type="submit" class="btn btn-primary">Write</button>
+
+    </form>
+    {{ errmsg }}
+</body>
+</html>

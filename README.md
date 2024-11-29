@@ -22,9 +22,8 @@ ___
 
 + 학습 관련
 
-    [보는거 추천](https://youtu.be/Xi_OdRBg1mU?si=1D2ZJOlVsk2YBcZo)
-
     [웹보안, burpsuite 기초 배우기](https://portswigger.net/web-security/dashboard)
+
 
     [연습할때 쓸 vm들(vulnhub)](https://www.vulnhub.com/)
 
@@ -39,3 +38,7 @@ ___
   [포너블kr](https://pwnable.kr)
 
   [hacker101ctf](https://ctf.hacker101.com/ctf)
+
+  [tryhackme](https://tryhackme.com)
+
+  [pwn.college](https://pang.college)

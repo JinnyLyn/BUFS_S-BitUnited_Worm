@@ -5,6 +5,8 @@
 # 0      : no err
 # others : input err
 
+score = 0
+
 try:
     score = int(input('점수 입력: '))
     if not (0 <= score <= 100) or score < 0:

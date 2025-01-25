@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        div {
+            margin-top: 20px;
+        }
+        button {
+            margin-right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Note List</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Note Content</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for note in notes.items() %}
+            <tr>
+                <td>{{ note[0] }}</td>
+                <td>{{ note[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <button onclick="location.href='/create_note'">Create</button>
+        <button onclick="location.href='/update_note'">Update</button>
+        <button onclick="location.href='/delete_note'">Delete</button>
+        <button onclick="location.href='/backup_notes'">Backup</button>
+    </div>
+</body>
+</html>

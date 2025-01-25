@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backup Notes</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        div {
+            margin-top: 20px;
+        }
+        button, input[type="submit"] {
+            margin-right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h2>Backup Notes</h2>
+    <form action="/backup_notes" method="post">
+        <input type="submit" value="Back up">
+        <button type="button" onclick="location.href='/notes'">Cancel</button>
+    </form>
+</body>
+</html>

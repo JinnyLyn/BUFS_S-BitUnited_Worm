@@ -1,6 +1,6 @@
 from pwn import *
 
-p = process(['python3', 'run.py'])
+p = process(['python3', 'run.py'], stdin=PTY)
 
 
 def extract_char(line):
@@ -28,7 +28,7 @@ def extract_hex(line):
         return hex_value
     return None
 
-for _ in range 10:
+for _ in range(10):
     challenge_line = p.recvline().decode().strip()
     print(challenge_line)
 
@@ -36,7 +36,43 @@ for _ in range 10:
         challenge_line = p.recvline().decode().strip()
         print(f'Skipping Line: {challenge_line}')
 
-        char_line = challenge_line
-        xor_key_line = p.recvline().decode().strip()
+    char_line = challenge_line
+    xor_key_line = p.recvline().decode().strip()
 
-        
+    print(f'character line: {char_line}')
+    print(f'XOR key line: {xor_key_line}')
+
+    challenge_key = extract_char(char_line)
+    xor_key_hex = extract_hex(xor_key_line)
+
+    if challenge_key is None or xor_key_hex is None:
+        print('one of the values are None. Exiting...')
+        break
+
+    try:
+        char_val_tohex = hex(ord(challenge_key))
+        char_value = int(char_val_tohex, 16)
+        xor_key_value = int(xor_key_hex, 16)
+    except ValueError as e:
+        print(f'err converting hexes into int: {e}')
+        break
+    
+    answer = char_value ^ xor_key_value
+    fanswer = chr(answer)
+    print(answer)
+
+    p.recvuntil('? ')
+    p.sendline(fanswer)
+
+    print(p.recvline().decode().strip())
+
+print('retrieving the flag...')
+while True:
+    try:
+        flag_output = p.recvline().decode().strip()
+        print(flag_output)
+    except EOFError:
+        print('[!] Process terminated. No more data to read.')
+        break
+
+p.close()

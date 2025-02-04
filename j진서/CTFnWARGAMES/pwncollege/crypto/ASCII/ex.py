@@ -1,6 +1,6 @@
 from pwn import *
 
-p = process(['python3', 'run.py'], stdin=PTY)
+p = process('./run', stdin=PTY)
 
 
 def extract_char(line):

@@ -1,0 +1,142 @@
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-06 22:48 KST
+Nmap scan report for fixed.trinarywolf.net (121.188.110.100)
+Host is up (0.0092s latency).
+Not shown: 9988 filtered tcp ports (no-response)
+PORT     STATE  SERVICE         VERSION
+80/tcp   open   http            nginx 1.26.0
+|_http-title: Welcome to nginx!
+|_http-server-header: nginx/1.26.0
+443/tcp  open   ssl/http        nginx 1.26.0
+|_http-server-header: nginx/1.26.0
+|_ssl-date: TLS randomness does not represent time
+|_http-title: Skywolf Repository
+| tls-alpn: 
+|   h2
+|   http/1.1
+|   http/1.0
+|_  http/0.9
+| ssl-cert: Subject: commonName=*.trinarywolf.net
+| Subject Alternative Name: DNS:*.easw.trinarywolf.net, DNS:*.eve.trinarywolf.net, DNS:*.ilsubyeega.trinarywolf.net, DNS:*.seat.trinarywolf.net, DNS:*.trinarywolf.net
+| Not valid before: 2025-01-21T07:10:52
+|_Not valid after:  2025-04-21T07:10:51
+3382/tcp open   mysql           MySQL 8.0.28
+|_ssl-date: TLS randomness does not represent time
+| mysql-info: 
+|   Protocol: 10
+|   Version: 8.0.28
+|   Thread ID: 32
+|   Capabilities flags: 65535
+|   Some Capabilities: LongColumnFlag, ConnectWithDatabase, ODBCClient, SupportsCompression, DontAllowDatabaseTableColumn, SwitchToSSLAfterHandshake, SupportsLoadDataLocal, FoundRows, Speaks41ProtocolNew, Speaks41ProtocolOld, LongPassword, InteractiveClient, Support41Auth, IgnoreSigpipes, IgnoreSpaceBeforeParenthesis, SupportsTransactions, SupportsAuthPlugins, SupportsMultipleStatments, SupportsMultipleResults
+|   Status: Autocommit
+|   Salt: H.\x165\x16\x1CL{4\x1B\x03x63k2Ts{\x1C
+|_  Auth Plugin Name: caching_sha2_password
+| ssl-cert: Subject: commonName=MySQL_Server_8.0.28_Auto_Generated_Server_Certificate
+| Not valid before: 2022-04-05T11:20:51
+|_Not valid after:  2032-04-02T11:20:51
+5201/tcp closed targus-getdata1
+5520/tcp open   ssh             OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 61:c1:3c:6c:4f:f8:10:3a:d0:42:af:d7:bb:9b:1a:1f (ECDSA)
+|_  256 18:ea:c6:74:09:9b:9a:e6:4a:e3:15:c6:11:a9:3a:2f (ED25519)
+5521/tcp closed unknown
+5522/tcp closed unknown
+8162/tcp open   ssh             OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 9f:27:c0:20:d2:17:c9:08:a7:88:ee:04:25:dd:56:86 (ECDSA)
+|_  256 d7:55:e8:61:af:0b:93:0c:6a:68:04:b7:39:10:f2:9c (ED25519)
+8192/tcp open   sophos?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP: 
+|     VOTIFIER 2 ebctdbt6deugscjf4t311q54gn
+|   DNSVersionBindReqTCP: 
+|     VOTIFIER 2 e162cktk0pb8acgov8usmg1eq3
+|   FourOhFourRequest: 
+|     VOTIFIER 2 b3f58hgc4tjibcase0lekv49s4
+|   GenericLines, NULL: 
+|     VOTIFIER 2 mnn5dfu14eeo6tkakeu543323g
+|   GetRequest: 
+|     VOTIFIER 2 7p6c9mntbhgm2fnm062rjcnj5
+|   HTTPOptions: 
+|     VOTIFIER 2 babrdgg98o9s2qhv2d0g7qggcm
+|   Help: 
+|     VOTIFIER 2 fghd4bjufv3cac7i7j0mbclds4
+|   JavaRMI: 
+|     VOTIFIER 2 iejglt12at08baskbpjjvmamjp
+|   Kerberos: 
+|     VOTIFIER 2 6chp6u7kv08pnsf84ki9ca7kn5
+|   LANDesk-RC: 
+|     VOTIFIER 2 m34pdqssavoka159pdta8co3m6
+|   LDAPBindReq: 
+|     VOTIFIER 2 tcn78mm095i0g92fo46agg83cj
+|   LDAPSearchReq: 
+|     VOTIFIER 2 4fhqghsoc1doee1h10bng2v9di
+|   LPDString: 
+|     VOTIFIER 2 fuvmb18t7frsqpg4skqe2efncv
+|   NCP: 
+|     VOTIFIER 2 7f84j243tvklsetcrib0ogigki
+|   NotesRPC: 
+|     VOTIFIER 2 ne2oovs29v0injtku60fi8v5p8
+|   RPCCheck: 
+|     VOTIFIER 2 4ucq5dkbh0kao8chv3j3g8dctn
+|   RTSPRequest: 
+|     VOTIFIER 2 nppkhekq9fnaa8i69derlf64h3
+|   SIPOptions: 
+|     VOTIFIER 2 ofmtaeso9uh9j1u4kpqll79c5u
+|   SMBProgNeg: 
+|     VOTIFIER 2 sip1snukfjtmpdhf0ocddc75g6
+|   SSLSessionReq: 
+|     VOTIFIER 2 p4jfekffgs3dfs6tjfn4hmvfc9
+|   TLSSessionReq: 
+|     VOTIFIER 2 rufgnaq15heten05mqlbkltvji
+|   TerminalServer: 
+|     VOTIFIER 2 rt56lb1tj4ojf0ojjkqsrjbbtc
+|   TerminalServerCookie: 
+|     VOTIFIER 2 7vpufc4msp9nk23f7f3d4gnac4
+|   WMSRequest: 
+|     VOTIFIER 2 gdech3kaol241ucj7o0f5k3f9m
+|   X11Probe: 
+|     VOTIFIER 2 dnjsfjqksgnc4qlbchvnvmjh0a
+|   afp: 
+|     VOTIFIER 2 53en748li2l4dugvtdmmr71bqe
+|   giop: 
+|     VOTIFIER 2 9flcvg1f4005lg39mor63rhs35
+|   ms-sql-s: 
+|     VOTIFIER 2 nf4f1bq238jbabjqv4llnd9b89
+|   oracle-tns: 
+|_    VOTIFIER 2 2ca7vb2plj7ttjut9ivi0erde3
+8211/tcp open   aruba-papi?
+8222/tcp closed unknown
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8192-TCP:V=7.94SVN%I=7%D=2/6%Time=67A4BDE5%P=x86_64-pc-linux-gnu%r(
+SF:NULL,26,"VOTIFIER\x202\x20mnn5dfu14eeo6tkakeu543323g\n")%r(GenericLines
+SF:,26,"VOTIFIER\x202\x20mnn5dfu14eeo6tkakeu543323g\n")%r(GetRequest,25,"V
+SF:OTIFIER\x202\x207p6c9mntbhgm2fnm062rjcnj5\n")%r(HTTPOptions,26,"VOTIFIE
+SF:R\x202\x20babrdgg98o9s2qhv2d0g7qggcm\n")%r(RTSPRequest,26,"VOTIFIER\x20
+SF:2\x20nppkhekq9fnaa8i69derlf64h3\n")%r(RPCCheck,26,"VOTIFIER\x202\x204uc
+SF:q5dkbh0kao8chv3j3g8dctn\n")%r(DNSVersionBindReqTCP,26,"VOTIFIER\x202\x2
+SF:0e162cktk0pb8acgov8usmg1eq3\n")%r(DNSStatusRequestTCP,26,"VOTIFIER\x202
+SF:\x20ebctdbt6deugscjf4t311q54gn\n")%r(Help,26,"VOTIFIER\x202\x20fghd4bju
+SF:fv3cac7i7j0mbclds4\n")%r(SSLSessionReq,26,"VOTIFIER\x202\x20p4jfekffgs3
+SF:dfs6tjfn4hmvfc9\n")%r(TerminalServerCookie,26,"VOTIFIER\x202\x207vpufc4
+SF:msp9nk23f7f3d4gnac4\n")%r(TLSSessionReq,26,"VOTIFIER\x202\x20rufgnaq15h
+SF:eten05mqlbkltvji\n")%r(Kerberos,26,"VOTIFIER\x202\x206chp6u7kv08pnsf84k
+SF:i9ca7kn5\n")%r(SMBProgNeg,26,"VOTIFIER\x202\x20sip1snukfjtmpdhf0ocddc75
+SF:g6\n")%r(X11Probe,26,"VOTIFIER\x202\x20dnjsfjqksgnc4qlbchvnvmjh0a\n")%r
+SF:(FourOhFourRequest,26,"VOTIFIER\x202\x20b3f58hgc4tjibcase0lekv49s4\n")%
+SF:r(LPDString,26,"VOTIFIER\x202\x20fuvmb18t7frsqpg4skqe2efncv\n")%r(LDAPS
+SF:earchReq,26,"VOTIFIER\x202\x204fhqghsoc1doee1h10bng2v9di\n")%r(LDAPBind
+SF:Req,26,"VOTIFIER\x202\x20tcn78mm095i0g92fo46agg83cj\n")%r(SIPOptions,26
+SF:,"VOTIFIER\x202\x20ofmtaeso9uh9j1u4kpqll79c5u\n")%r(LANDesk-RC,26,"VOTI
+SF:FIER\x202\x20m34pdqssavoka159pdta8co3m6\n")%r(TerminalServer,26,"VOTIFI
+SF:ER\x202\x20rt56lb1tj4ojf0ojjkqsrjbbtc\n")%r(NCP,26,"VOTIFIER\x202\x207f
+SF:84j243tvklsetcrib0ogigki\n")%r(NotesRPC,26,"VOTIFIER\x202\x20ne2oovs29v
+SF:0injtku60fi8v5p8\n")%r(JavaRMI,26,"VOTIFIER\x202\x20iejglt12at08baskbpj
+SF:jvmamjp\n")%r(WMSRequest,26,"VOTIFIER\x202\x20gdech3kaol241ucj7o0f5k3f9
+SF:m\n")%r(oracle-tns,26,"VOTIFIER\x202\x202ca7vb2plj7ttjut9ivi0erde3\n")%
+SF:r(ms-sql-s,26,"VOTIFIER\x202\x20nf4f1bq238jbabjqv4llnd9b89\n")%r(afp,26
+SF:,"VOTIFIER\x202\x2053en748li2l4dugvtdmmr71bqe\n")%r(giop,26,"VOTIFIER\x
+SF:202\x209flcvg1f4005lg39mor63rhs35\n");
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 200.44 seconds

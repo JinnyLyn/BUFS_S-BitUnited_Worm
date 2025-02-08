@@ -1,0 +1,3 @@
+FDEL:/hi
+IADD:00000000:/HelloWorld.exe
+IDSET:/HelloWorld.exe:7f01187e136097457941422

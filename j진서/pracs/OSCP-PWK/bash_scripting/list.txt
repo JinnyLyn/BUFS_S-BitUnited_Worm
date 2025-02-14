@@ -1,0 +1,12 @@
+admin.megacorpone.com
+beta.megacorpone.com
+intranet.megacorpone.com
+mail2.megacorpone.com
+mail.megacorpone.com
+siem.megacorpone.com
+support.megacorpone.com
+syslog.megacorpone.com
+test.megacorpone.com
+vpn.megacorpone.com
+www2.megacorpone.com
+www.megacorpone.com

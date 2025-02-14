@@ -1,3 +1,4 @@
 .vscode
 EHCheatSheet
 *.exe
+.gdb_history

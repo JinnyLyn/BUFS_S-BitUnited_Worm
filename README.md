@@ -46,6 +46,7 @@ o7
 
 <details><summary>보안/해킹 학습 관련
 </summary>
+  
 [웹보안, burpsuite 기초 배우기](https://portswigger.net/web-security/dashboard)
 
 [연습할때 쓸 vm들(vulnhub)](https://www.vulnhub.com/)
@@ -55,6 +56,7 @@ o7
 
 <details><summary>CTF 연습문제들/학습
 </summary>
+  
 [드림핵](https://dreamhack.io)
 
 [crackmes](https://crackmes.one)

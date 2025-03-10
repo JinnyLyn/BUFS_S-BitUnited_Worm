@@ -13,7 +13,7 @@
 - 조장
 
   24학번 **노진서**
-<a href="#" onclick="navigator.clipboard.writeText('01050708829'); alert('복사되었습니다!'); return false;">01050708829</a>
+[01050708829](tel:01050708829)
   
   [인스타그램](https://www.instagram.com/jinnie.al?igsh=aGwwcmI3YjBvMmJu)
 

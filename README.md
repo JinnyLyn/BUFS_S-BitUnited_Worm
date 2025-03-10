@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=23&duration=1000&pause=1500&color=07F700&background=E2FFE400&center=true&vCenter=true&width=435&lines=%EB%B6%80%EC%82%B0%EC%99%B8%EB%8C%80+%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%9C%B5%ED%95%A9%EB%B3%B4%EC%95%88%ED%95%99%EA%B3%BC+%EB%8F%99%EC%95%84%EB%A6%AC;S-BIT_United+-+Worm)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=23&duration=1000&pause=1500&color=07F700&background=E2FFE400&center=true&vCenter=true&width=435&lines=%EB%B6%80%EC%82%B0%EC%99%B8%EB%8C%80+%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%9C%B5%ED%95%A9%EB%B3%B4%EC%95%88%ED%95%99%EA%B3%BC+%EB%8F%99%EC%95%84%EB%A6%AC;S-BIT_United+-+Worm)](https://github.com/JinnyLyn/BUFS_S-BitUnited_Worm)
 
 ## ❓뭐하는 곳인가요?
 - 저희 동아리는 **<u>정보보안 분야를 함께 공부하기 위해</u>** 만들었어요.   
@@ -12,7 +12,10 @@
 ## 🙋‍♀️ 인원 소개
 - 조장
 
-  24학번 **노진서 [01050708829](tel:01050708829)**
+  24학번 **노진서**
+<a href="#" onclick="navigator.clipboard.writeText('01050708829'); alert('복사되었습니다!'); return false;">01050708829</a>
+  
+  [인스타그램](https://www.instagram.com/jinnie.al?igsh=aGwwcmI3YjBvMmJu)
 
 <img src="/.assets/jojang.jpg" alt="조장 사진" width="200">
 

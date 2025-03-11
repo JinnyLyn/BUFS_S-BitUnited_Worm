@@ -5,7 +5,6 @@ from pwn import *
 def slog(n, m): return success(': '.join([n, hex(m)]))
 
 p = remote("host1.dreamhack.games", 11485)
-
 context.arch = 'amd64'
 
 # [1] Get information about buf

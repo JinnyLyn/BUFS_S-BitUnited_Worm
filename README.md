@@ -19,8 +19,7 @@
 
 <img src="/.assets/jojang.jpg" alt="조장 사진" width="200">
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=JinnyLyn&locale=ko)](https://git.io/streak-stats)
-
+<a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=JinnyLyn&locale=ko" alt="GitHub Streak" /></a>
  - 조원
 
    ~~24학번 **장연호 [01098294442](tel:01098294442)**~~ 군바🫡 (**27년 1월** 전역)

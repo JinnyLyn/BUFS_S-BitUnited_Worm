@@ -19,7 +19,7 @@
 
 <img src="/.assets/jojang.jpg" alt="조장 사진" width="200">
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=JinnyLyn&theme=dark&date_format=%5BY.%5Dn.j)](https://git.io/streak-stats)
+[![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=JinnyLyn&theme=github-compact)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 - 조원
 
@@ -29,8 +29,7 @@
 
 o7
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=hohoyeonho&theme=dark&date_format=%5BY.%5Dn.j)](https://git.io/streak-stats)
-
+[![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=hohoyeonho&theme=github-compact)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 
 

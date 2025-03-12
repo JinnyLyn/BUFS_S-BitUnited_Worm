@@ -1,3 +1,6 @@
+<img src="./assets/makesure.jpg" alt="makesure" width="400">
+
+
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=23&duration=1000&pause=1500&color=07F700&background=E2FFE400&center=true&vCenter=true&width=435&lines=%EB%B6%80%EC%82%B0%EC%99%B8%EB%8C%80+%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%9C%B5%ED%95%A9%EB%B3%B4%EC%95%88%ED%95%99%EA%B3%BC+%EB%8F%99%EC%95%84%EB%A6%AC;S-BIT_United+-+Worm)](https://github.com/JinnyLyn/BUFS_S-BitUnited_Worm)
 
 ## ❓뭐하는 곳인가요?
@@ -35,6 +38,7 @@ o7
 
    
 ## 📚 학습자료 
+_클릭하시면 펼쳐집니다!_
    
 <details><summary>깃허브 기초 관련 글 (사용법 등)
 </summary>
@@ -65,10 +69,52 @@ o7
 
 [포너블kr](https://pwnable.kr)
 
-[hacker101ctf](https://ctf.hacker101.com/ctf)
+[hacker101ctf](https://ctf.hacker101.com/)
 
 [TryHackMe](https://tryhackme.com)
 
 [pwn.college](https://pang.college)
 </details>
+
+```mermaid
+---
+config:
+  layout: elk
+  look: neo
+---
+flowchart TD
+ subgraph s1["한국어"]
+        n5["VSC에서 깃허브 사용하기"]
+        n4["깃허브 사용법"]
+        n6["깃허브 프로젝트"]
+        n9(["드림핵"])
+  end
+ subgraph s2["ENGLISH"]
+        n11["crackmes"]
+        n13["포너블kr"]
+        n14["hacker101 ctf"]
+        n10(["pwn.college"])
+        n12(["TryHackMe"])
+        n7["웹 보안, Burpsuite"]
+        n8["실습용 VM"]
+  end
+    A("fa:fa-book-open 학습 자료") --> n1["깃허브 기초(사용법 등)"] & n2["보안/해킹"] & n3["CTF"]
+    n1 --> n4 & n5 & n6
+    n2 --> n7 & n8 & n9 & n10 & n12
+    n3 --> n9 & n10 & n11 & n13 & n14
+    n3 --- n12
+    style A color:#00C853
+    click n5 "https://ossam5.tistory.com/169"
+    click n4 "https://devyihyun.tistory.com/30"
+    click n6 "https://musma.github.io/2023/08/03/github-projects.html#github-projects-%EB%B7%B0-%EC%B6%94%EA%B0%80"
+    click n9 "dreamhack.io"
+    click n11 "https://crackmes.one/"
+    click n13 "pwnable.kr"
+    click n14 "https://ctf.hacker101.com/"
+    click n10 "https://pwn.college/"
+    click n12 "https://tryhackme.com/"
+    click n7 "https://portswigger.net/web-security/dashboard"
+    click n8 "https://www.vulnhub.com/"
+
+```
 

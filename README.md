@@ -19,7 +19,7 @@
 
 <img src="/.assets/jojang.jpg" alt="조장 사진" width="200">
 
-[![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=JinnyLyn)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=JinnyLyn&theme=dark&locale=ko)](https://git.io/streak-stats)
 
 - 조원
 

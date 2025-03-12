@@ -20,18 +20,14 @@
   
   [인스타그램](https://www.instagram.com/jinnie.al?igsh=aGwwcmI3YjBvMmJu)
 
-<img src="/.assets/jojang.jpg" alt="조장 사진" width="200">
-
+<img src="/.assets/jojang.jpg" alt="조장 사진" width="200">[![GitHub Streak](https://github-readme-streak-stats-smoky-phi.vercel.app?user=JinnyLyn&theme=transparent&hide_border=true&border_radius=&locale=ko&date_format=%5BY.%5Dn.j)](https://git.io/streak-stats)
 [![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=JinnyLyn&theme=github-compact)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 - 조원
 
    ~~24학번 **장연호 [01098294442](tel:01098294442)**~~ 군바🫡 (**27년 1월** 전역)
 
-<img src="/.assets/samang.png" alt="연호 사진" width="200"> 
-
-o7
-
+<img src="/.assets/samang.png" alt="연호 사진" width="200">[![GitHub Streak](https://github-readme-streak-stats-smoky-phi.vercel.app?user=hohoyeonho&theme=transparent&hide_border=true&border_radius=&locale=ko&date_format=%5BY.%5Dn.j)](https://git.io/streak-stats)
 [![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=hohoyeonho&theme=github-compact)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 
@@ -98,7 +94,7 @@ flowchart TD
         n7["웹 보안, Burpsuite"]
         n8["실습용 VM"]
   end
-    A("fa:fa-book-open 학습 자료") --> n1["깃허브 기초(사용법 등)"] & n2["보안/해킹"] & n3["CTF"]
+    A("fa:fa-book-open 학습 자료") --> n1["깃허브 기초(사용법 등)"] & n2["보안/해킹 공부"] & n3["CTF"]
     n1 --> n4 & n5 & n6
     n2 --> n7 & n8 & n9 & n10 & n12
     n3 --> n9 & n10 & n11 & n13 & n14

@@ -19,7 +19,7 @@
 
 <img src="/.assets/jojang.jpg" alt="조장 사진" width="200">
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=JinnyLyn&theme=dark&locale=ko)](https://git.io/streak-stats)
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=JinnyLyn&theme=dark)](https://git.io/streak-stats)
 
 - 조원
 

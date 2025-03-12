@@ -1,4 +1,4 @@
-<img src="./assets/makesure.jpg">
+<img src="./.assets/makesure.jpg" alt="onealog" width="500">
 
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=23&duration=1000&pause=1500&color=07F700&background=E2FFE400&center=true&vCenter=true&width=435&lines=%EB%B6%80%EC%82%B0%EC%99%B8%EB%8C%80+%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%9C%B5%ED%95%A9%EB%B3%B4%EC%95%88%ED%95%99%EA%B3%BC+%EB%8F%99%EC%95%84%EB%A6%AC;S-BIT_United+-+Worm)](https://github.com/JinnyLyn/BUFS_S-BitUnited_Worm)

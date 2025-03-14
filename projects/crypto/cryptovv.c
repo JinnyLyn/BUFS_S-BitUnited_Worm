@@ -101,10 +101,9 @@ void string2binary(const char *s, char *binary) {
   }
 }
 
-void clrInputBuffer() {
+void clearInputBuffer() {
   int c;
-  while ((c = getchar()) != '\n' && c != EOF)
-    ;
+  while((c = getchar()) != '\n' && c != EOF);
 }
 
 /*
@@ -112,6 +111,7 @@ void clrInputBuffer() {
  * @param method Parameter for this function will determine the encryption
  * method.
  */
+//This is wayyy too fucking weak. Add sth. Maybe salt it with server time befor xor?
 int encrypt(int method, char *object_string) {
   switch (method) {
   case 1:

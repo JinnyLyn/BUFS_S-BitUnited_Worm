@@ -10,6 +10,11 @@ char mykey2[14] = "ahagosipdasex";
 char *char_mykey = NULL;
 char mykeyadd[30];
 
+void clearInputBuffer() {
+  int c;
+  while((c = getchar()) != '\n' && c != EOF);
+}
+
 // Converting a char into binary
 void char2binary(char c, char *binary_char) {
     for (int i = 7; i >= 0; --i) {

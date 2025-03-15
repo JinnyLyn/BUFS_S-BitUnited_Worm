@@ -126,6 +126,9 @@ int encrypt(int method, char *object_string) {
  * method.
  */
 // int decrypt(int method, char *object_string)
+int decrypt(int decryptee, char *key) {
+
+}
 
 //*main
 int main(void) {
@@ -157,7 +160,7 @@ int main(void) {
 
   decrypt_or_encrypt = validate_selection(1, 2);
   if (decrypt_or_encrypt != -1)
-    clrInputBuffer();
+    clearInputBuffer();
 
   switch (decrypt_or_encrypt) {
   case 1: // Encrypt

@@ -8,20 +8,24 @@
 - 각자 원하는 분야를 다양하게 공부하고, 서로 피드백하며 공부해나갈 수 있어요.  
 - 정보보안 콘퍼런스, CTF 대회 등 온/오프라인 가리지 않고 동아리 단위로 시간맞춰 참석해보려고도 해요.
 - 선후배간 취업관련 정보, 자격증 응시 경험 등을 공유하며 다같이 성장해나갈 수 있는 교류가 이뤄질 곳이에요.
-- 현재는 소수인원이라 각자 공부중이지만, 조원이 많아지면 교내 도서관 등 만나서 공부할 자리를 갖고자 해요.
+- 현재는 소수인원이라 각자 공부중이지만, 조원이 많아지면 외부 활동 등 만나서 공부할 자리를 갖고자 해요.
 - 친목 도모 활동도 원하는 분들과 함께 해보고자 합니다.
 - 기타 문의사항은 아래 조장에게 편하게 연락 주시면 언제든 답변해 드립니다.
 
 ## 🙋‍♀️ 인원 소개
 - 조장
 
+
+<img src="/.assets/jojang.jpg" alt="조장 사진" width="200">[![GitHub Streak](https://github-readme-streak-stats-smoky-phi.vercel.app?user=JinnyLyn&theme=transparent&hide_border=true&border_radius=&locale=ko&date_format=%5BY.%5Dn.j)](https://git.io/streak-stats)
   24학번 **노진서**
 [01050708829](tel:01050708829)
   
   [인스타그램](https://www.instagram.com/jinnie.al?igsh=aGwwcmI3YjBvMmJu)
 
-<img src="/.assets/jojang.jpg" alt="조장 사진" width="200">[![GitHub Streak](https://github-readme-streak-stats-smoky-phi.vercel.app?user=JinnyLyn&theme=transparent&hide_border=true&border_radius=&locale=ko&date_format=%5BY.%5Dn.j)](https://git.io/streak-stats)
+
 [![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=JinnyLyn&theme=github-compact)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
+
 
 - 조원
 

@@ -17,6 +17,8 @@
 
 
 <img src="/.assets/jojang.jpg" alt="조장 사진" width="200">[![GitHub Streak](https://github-readme-streak-stats-smoky-phi.vercel.app?user=JinnyLyn&theme=transparent&hide_border=true&border_radius=&locale=ko&date_format=%5BY.%5Dn.j)](https://git.io/streak-stats)
+
+
   24학번 **노진서**
 [01050708829](tel:01050708829)
   
